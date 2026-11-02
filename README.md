@@ -123,6 +123,8 @@ It links the skill into the global directories used on this machine:
 - `~/.agents/skills/sogeti-html-effectiveness`
 - `~/.dsh/skills/sogeti-html-effectiveness`
 - `~/.claude/skills/sogeti-html-effectiveness`
+- `~/.codex/skills/sogeti-html-effectiveness`
+- `~/.config/agents/skills/sogeti-html-effectiveness`
 
 Manual equivalent:
 

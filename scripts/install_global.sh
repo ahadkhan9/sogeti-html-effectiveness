@@ -8,6 +8,8 @@ TARGETS=(
   "$HOME/.agents/skills"
   "$HOME/.dsh/skills"
   "$HOME/.claude/skills"
+  "$HOME/.codex/skills"
+  "$HOME/.config/agents/skills"
 )
 
 for base in "${TARGETS[@]}"; do
