@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI doesn’t fail at the model. It fails at the handover. — Sogeti Insights</title>
+<meta name="description" content="A Sogeti field note on why AI pilots stall between the demo and the operating model, and the four handovers that decide whether value survives go-live.">
+<link rel="stylesheet" href="../../../assets/sogeti.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- @include _partials/shapes.html -->
+<!-- @include _partials/header.html -->
+
+<main id="main">
+  <section class="hero hero--field">
+    <div class="hero__field" aria-hidden="true"></div>
+    <div class="wrap hero__inner intro">
+      <div class="hero__copy">
+        <p class="kicker">Insight: AI and data</p>
+        <h1 class="display">AI doesn’t fail at the model. It fails at the handover.</h1>
+        <p class="lede">Pilots look convincing in the demo room. Value shows up only when ownership, data and decisions move into the line. Fix the handover before the next go-live.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#context">Read the field note
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#contact">Talk to the AI and data team</a>
+        </div>
+        <div class="hero__meta">
+          <span>7 min read</span>
+          <time datetime="2026-11-12">12 November 2026</time>
+          <span>Sogeti AI and Data practice</span>
+        </div>
+      </div>
+      <figure class="hero__art">
+        <img src="../../../assets/illustrations/value-stack.svg" width="640" height="520" alt="Isometric illustration of a value stack: layered blue platforms carrying a red sphere, with data and decision tiles floating around it.">
+        <figcaption class="hero__caption">The value stack: data, models and decisions only compound when someone owns the join.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section--white" id="context">
+    <div class="wrap article-layout">
+      <aside class="toc no-print" aria-label="In this article">
+        <p class="toc__title">In this article</p>
+        <ol>
+          <li><a href="#demo"><span>01</span>The demo is not the operating model</a></li>
+          <li><a href="#handovers"><span>02</span>Four handovers that decide the outcome</a></li>
+          <li><a href="#good"><span>03</span>What good handover looks like</a></li>
+          <li><a href="#measure"><span>04</span>Measure the handover, not the demo</a></li>
+        </ol>
+        <button class="btn btn--ghost btn--sm" type="button" data-copy="#article-summary" data-copy-message="Summary copied as Markdown">
+          <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy summary
+        </button>
+      </aside>
+
+      <article class="article-body">
+        <div id="article-summary" class="sr-only">
+# AI doesn’t fail at the model. It fails at the handover.
+
+A Sogeti field note on the gap between a working AI demo and a working AI service.
+
+- A pilot is a decision to learn; a product is a decision to be responsible.
+- Four handovers decide the outcome: ownership, data, risk and measurement.
+- Put a name, a number and a switch on every handover before go-live.
+- Measure decision latency, exception rate, coverage and cost per decision, not model accuracy alone.
+        </div>
+
+        <p class="lede">Every organization we work with has a working AI demo. Very few have a working answer to a simpler question: who owns the model on the Monday after go-live?</p>
+
+        <p>The demo optimizes for surprise. The operating model optimizes for repetition. Those are different systems, staffed by different people, measured in different rooms. A pilot can succeed on its own terms and still leave nothing behind: no owner, no monitored input, no fallback, no line in the budget.</p>
+
+        <p>That gap is not a technology problem. It is a handover problem. And handovers are designable.</p>
+
+        <div class="callout callout--purple">
+          <h4>A pilot is a decision to learn. A product is a decision to be responsible.</h4>
+          <p>The move from one to the other is the whole job. It deserves a plan, a date and a named owner, not an optimistic slide.</p>
+        </div>
+
+        <h2 id="demo">01. The demo is not the operating model</h2>
+
+        <p>In a demo, the model meets a curated case and a patient audience. In production, it meets missing fields at 02:00, a customer who does not fit the training set, and a queue of people who need an answer before the next shift.</p>
+
+        <p>Most stalled programs we see are not blocked by model quality. They are blocked by the unglamorous joins: a data contract nobody signed, an exception path nobody tested, a service owner nobody named. The model is usually the least surprising part of the system.</p>
+
+        <p>This is good news. Handovers can be designed, tested and rehearsed. They can also be skipped, which is why so many pilots arrive at go-live with a model and no service.</p>
+
+        <h2 id="handovers">02. Four handovers that decide the outcome</h2>
+
+        <p>We look for four transfers of responsibility. If any one of them is missing, the service is running on borrowed time.</p>
+
+        <ol class="numbered">
+          <li>
+            <h3>Ownership: from the build team to the business owner</h3>
+            <p>The question is not “who sponsors this?” It is “whose target moves if the model is wrong?” If the answer is a steering committee, the handover has not happened. A service catalog entry with a name, a budget and an escalation path is better evidence than a signed-off slide.</p>
+          </li>
+          <li>
+            <h3>Data: from an extract to a contract</h3>
+            <p>The demo reads a snapshot. The service reads a living feed. Someone on the source system has to guarantee schema, freshness and quality next quarter. Without that, the model is only as reliable as an undocumented spreadsheet.</p>
+          </li>
+          <li>
+            <h3>Risk: from a review to runtime</h3>
+            <p>A risk review describes what could go wrong. Runtime describes what to do when it does. The service needs thresholds, a human review path, a rollback and an incident route that a tired operator can follow at 02:00.</p>
+          </li>
+          <li>
+            <h3>Measurement: from accuracy to outcome</h3>
+            <p>Accuracy is a property of the model. Decision latency, exception rate and cost per decision are properties of the service. If the operating number does not move, the organization has bought a demo with a maintenance bill.</p>
+          </li>
+        </ol>
+
+        <h2 id="good">03. What good handover looks like</h2>
+
+        <p>Good handover is boring in the best way. It is visible in a service catalog, a data contract, a runbook and a review date. None of those artifacts are glamorous. All of them are testable.</p>
+
+        <div class="table-wrap">
+          <table class="table">
+            <caption>Handover evidence we ask to see before a production go-live.</caption>
+            <thead>
+              <tr><th scope="col">Handover</th><th scope="col">Question to ask</th><th scope="col">Evidence it happened</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="strong">Ownership</td><td>Who is accountable for the service?</td><td>A name in the service catalog, with budget and escalation</td></tr>
+              <tr><td class="strong">Data</td><td>Which input can stop the service?</td><td>A monitored data contract with a documented fallback</td></tr>
+              <tr><td class="strong">Risk</td><td>Who can switch it off?</td><td>A tested rollback and an incident path someone has walked</td></tr>
+              <tr><td class="strong">Measurement</td><td>Which operating number moves?</td><td>A baseline, a target and a date to review both</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure class="article-figure">
+          <div class="article-figure__art">
+            <img src="../../../assets/illustrations/handover.svg" width="640" height="420" alt="Isometric diagram of two platforms separated by a gap: a stack of blue layers on the left, a red sphere on a light platform on the right, and a dashed path broken at the gap.">
+          </div>
+          <div class="annotation-grid">
+            <div><b>Build team</b>Model, evaluation, release.</div>
+            <div><b>The gap</b>No named service owner, no contract, no fallback.</div>
+            <div><b>Line team</b>Decision, exception, outcome.</div>
+          </div>
+          <figcaption><b>Figure 1 — The handover gap.</b> Most programs staff the left and right of this picture. The value sits in the join.</figcaption>
+        </figure>
+
+        <h2 id="measure">04. Measure the handover, not the demo</h2>
+
+        <p>Demo metrics flatter the model. Handover metrics tell you whether the organization can carry it. Four numbers are enough to start a useful conversation:</p>
+
+        <ul>
+          <li><strong>Decision latency.</strong> Time from input to a human decision, before and after. If it has not moved, the service is not in the workflow yet.</li>
+          <li><strong>Exception rate.</strong> How often the model hands work back to a person, and why. A rising rate is an early warning, not a failure.</li>
+          <li><strong>Coverage.</strong> The share of real cases the service actually sees. A model that only meets easy cases is a demo with a queue.</li>
+          <li><strong>Cost per decision.</strong> Inference, review and rework in one number. This is the number a finance partner will ask for anyway.</li>
+        </ul>
+
+        <p>None of these require a new platform. They require agreement on what the service is for, and the discipline to look at the same four numbers every month.</p>
+
+        <blockquote class="quote">
+          <blockquote>We stopped asking whether the model was good enough and started asking who would answer the phone when it was wrong. That changed the design.</blockquote>
+          <figcaption><b>Operations director, European insurance group</b>Composite quote for layout reference. Replace with an approved client quote before publication.</figcaption>
+        </blockquote>
+
+        <h2 id="next">The making is the point</h2>
+
+        <p>“Value in the making” is not a slogan about effort. It describes where value actually lives: in the unglamorous joins between a model and the people who use it. Put a name, a number and a switch on every one.</p>
+
+        <div class="end-cta">
+          <p class="kicker">Working session</p>
+          <h3 class="h3 mt-3">Bring us the handover. We will map the service, the owners and the gap.</h3>
+          <p class="mt-3 ink-2 measure">In 90 minutes, we will trace one live use case from input to decision, name the missing transfers and leave you with a one-page plan for the next go-live.</p>
+          <div class="actions mt-5">
+            <a class="btn btn--primary" href="https://www.sogeti.com/contact-us/" target="_blank" rel="noopener">Book a working session
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <button class="btn btn--ghost" type="button" data-copy="#article-summary" data-copy-message="Summary copied as Markdown">
+              <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy summary
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<!-- @include _partials/footer.html -->
+<script src="../../../assets/sogeti.js"></script>
+</body>
+</html>

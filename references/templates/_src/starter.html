@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artifact title — Sogeti</title>
+<meta name="description" content="One sentence that says what this page is for and who should read it.">
+<link rel="stylesheet" href="../../../assets/sogeti.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- @include _partials/shapes.html -->
+<!-- @include _partials/header.html -->
+
+<main id="main">
+  <!-- EDIT: the opener. One display claim, one dek, one decision. -->
+  <section class="page-head" id="context">
+    <div class="page-head__shape" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="kicker">Section / Topic</p>
+      <h1 class="display display--s">The one thing the reader should remember.</h1>
+      <p class="lede">The evidence or the tension, in two sentences. Keep it specific enough that a competitor could not paste their name over it.</p>
+      <div class="page-head__meta">
+        <span>Owner: your name</span>
+        <time datetime="2026-11-14">14 November 2026</time>
+        <span>Draft</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white" id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="kicker">01 / The point</p><h2 class="h2 mt-3">A specific section heading.</h2></div>
+        <p class="lede">A short framing paragraph. This layout is a split: 7 columns of heading, 4 columns of framing.</p>
+      </div>
+
+      <div class="grid grid--4">
+        <div class="stat"><div class="stat__value">00</div><p class="stat__label">A real number</p><p class="stat__note">With a base and a date</p></div>
+        <div class="stat stat--vibrant"><div class="stat__value">00</div><p class="stat__label">A second number</p><p class="stat__note">Only if it earns the space</p></div>
+        <div class="stat"><div class="stat__value">00</div><p class="stat__label">A third number</p><p class="stat__note">Or delete the row</p></div>
+        <div class="stat stat--red"><div class="stat__value">00</div><p class="stat__label">A risk or a cost</p><p class="stat__note">With a source</p></div>
+      </div>
+
+      <div class="callout callout--purple mt-6">
+        <h4>One clear ask</h4>
+        <p>What should the reader do next? A page that ends in a dead end is a document, not a tool.</p>
+      </div>
+
+      <div class="actions mt-5">
+        <button class="btn btn--primary" type="button" data-copy="#summary" data-copy-message="Summary copied as Markdown">
+          <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy summary
+        </button>
+        <button class="btn btn--ghost" type="button" data-print>
+          <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Print / PDF
+        </button>
+      </div>
+
+      <!-- EDIT: the export. Keep it short enough to paste into a decision record. -->
+      <div id="summary" class="sr-only">
+# Artifact title
+
+- Job: one sentence
+- Reader: one sentence
+- Decision or action: one sentence
+- Evidence: source, date, base
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- @include _partials/footer.html -->
+<script src="../../../assets/sogeti.js"></script>
+</body>
+</html>

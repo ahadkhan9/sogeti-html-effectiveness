@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decision brief — Northline phase 2 boundary</title>
+<meta name="description" content="A one-page decision record for the Northline claims platform phase 2 boundary and the intake slice.">
+<link rel="stylesheet" href="../../../assets/sogeti.css">
+</head>
+<body class="brief-body">
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- @include _partials/shapes.html -->
+
+<main id="main" class="brief-sheet">
+  <div class="brief-head">
+    <img src="../../../assets/logos/sogeti-logo-color.png" width="164" height="86" alt="Sogeti, part of Capgemini">
+    <div class="mono">Decision brief<br>Northline Group<br>Confidential</div>
+  </div>
+
+  <div class="brief-title">
+    <p class="kicker">Decision brief / Phase 2</p>
+    <h1 class="display mt-3">Approve the boundary. Fund the proof.</h1>
+    <div class="brief-meta">
+      <span>Owner: Chief Claims Officer</span>
+      <span>Prepared by: Sogeti client partner</span>
+      <time datetime="2026-11-14">14 November 2026</time>
+      <span>Decision needed by: 21 November 2026</span>
+    </div>
+  </div>
+
+  <div class="decision-box">
+    <p class="kicker">Decision requested</p>
+    <h2>Approve the phase 2 strangler boundary and the claims intake slice.</h2>
+    <p>This is a boundary decision, not a platform decision. It authorizes one production slice, one service owner and a go/no-go at week 12. Payments and correspondence remain out of scope.</p>
+  </div>
+
+  <section class="brief-section" id="context">
+    <h2>1. Context</h2>
+    <p>Northline’s claims operation runs on a batch-bound monolith. Every change is a full-book event, and the platform team is fully allocated to regulatory and keep-the-lights work. The business waits; the queue grows; the workarounds become the process.</p>
+    <p>Discovery tested three options against six criteria. Partnering with Sogeti scored highest on the balanced weighting (80/100), ahead of buying a platform (65) and building in-house (62). The margin is not decisive on its own; the two highest-weighted criteria, time to value and delivery confidence, are the ones the first slice is designed to test.</p>
+  </section>
+
+  <section class="brief-section" id="approach">
+    <h2>2. Options considered</h2>
+    <div class="table-wrap">
+      <table class="table table--compact table--fit">
+        <thead><tr><th scope="col">Option</th><th scope="col" class="n">Score</th><th scope="col">What it buys</th><th scope="col">What it costs</th></tr></thead>
+        <tbody>
+          <tr><td class="strong">Build in-house</td><td class="n">62</td><td>Maximum control; capability stays internal.</td><td>Slowest to first live slice; scarce skills; hiring risk.</td></tr>
+          <tr><td class="strong">Buy a platform</td><td class="n">65</td><td>Fastest procurement; vendor roadmap.</td><td>Less control; integration and exit costs; configuration still needs a team.</td></tr>
+          <tr><td class="strong">Partner with Sogeti</td><td class="n">80</td><td>Joint team, live proof, handover built in.</td><td>Dependency risk; requires active client ownership from week one.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted mt-3">Weighted scores from the options appraisal. Scores are illustrative and must be replaced with evidence before a real decision.</p>
+  </section>
+
+  <section class="brief-section" id="evidence">
+    <h2>3. Recommendation</h2>
+    <p><strong>Approve the phase 2 boundary and fund the 90-day discovery with Sogeti.</strong> The recommendation is conditional on three commitments, each with a date and an owner.</p>
+    <ol>
+      <li><strong>Name the intake service owner by 21 November.</strong> The owner signs the runbook and holds the escalation path. Without a name, the slice is not authorized to go live.</li>
+      <li><strong>Run the rollback rehearsal with risk by 28 November.</strong> The second rehearsal is the evidence risk asked for. It is a condition of the week 12 gate, not a parallel workstream.</li>
+      <li><strong>Bring the phase 3 case to the week 12 gate.</strong> Scale is a separate decision. The gate decides whether the evidence supports another slice, not whether the programme continues.</li>
+    </ol>
+    <div class="callout callout--warn mt-5">
+      <h4>What would make us recommend stopping</h4>
+      <p>If the slice cannot run live for four weeks with a named owner, a tested rollback and one operating metric that moved, the evidence does not support scale. We will recommend stopping and retiring the dual run.</p>
+    </div>
+  </section>
+
+  <section class="brief-section">
+    <h2>4. Risks and mitigations</h2>
+    <div class="table-wrap">
+      <table class="table table--compact table--fit">
+        <thead><tr><th scope="col">Risk</th><th scope="col">Sev.</th><th scope="col">Mitigation</th><th scope="col">Owner</th></tr></thead>
+        <tbody>
+          <tr><td class="strong">Exception queue capacity</td><td><span class="status status--risk">High</span></td><td>Fund two analysts for six weeks; instrument queue age.</td><td>Head of Claims Ops</td></tr>
+          <tr><td class="strong">Event schema drift</td><td><span class="status status--warn">Med</span></td><td>Named schema owner; versioned contracts; consumer tests.</td><td>Solution lead</td></tr>
+          <tr><td class="strong">Dual-run cost</td><td><span class="status status--warn">Med</span></td><td>Time-boxed window; retire the old path at week 12.</td><td>Client partner</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="brief-section">
+    <h2>5. Decision record</h2>
+    <div class="field" style="max-width:420px">
+      <label for="decision">Decision</label>
+      <select id="decision">
+        <option>Approve</option>
+        <option selected>Approve with conditions</option>
+        <option>Reject</option>
+        <option>Defer</option>
+      </select>
+    </div>
+    <div class="field mt-4">
+      <label for="conditions">Conditions or notes</label>
+      <textarea id="conditions" rows="3">Service owner named by 21 November. Rollback rehearsal with risk by 28 November. Phase 3 case at the week 12 gate.</textarea>
+    </div>
+    <div class="actions mt-4 no-print">
+      <button class="btn btn--primary btn--sm" type="button" id="copy-record">
+        <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy decision record
+      </button>
+      <button class="btn btn--ghost btn--sm" type="button" data-print>
+        <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Print / PDF
+      </button>
+    </div>
+  </section>
+
+  <div class="brief-sign">
+    <p class="mono" style="font-size:.66rem;color:var(--blue)">Sign-off</p>
+    <div class="brief-sign__row">
+      <div><div class="brief-sign__line"></div><label>Chief Claims Officer</label></div>
+      <div><div class="brief-sign__line"></div><label>Date</label></div>
+    </div>
+    <div class="brief-sign__row">
+      <div><div class="brief-sign__line"></div><label>Sogeti client partner</label></div>
+      <div><div class="brief-sign__line"></div><label>Date</label></div>
+    </div>
+  </div>
+
+  <div class="brief-foot">
+    <span>Sogeti · Part of the Capgemini Group</span>
+    <span>Reference artifact · illustrative client scenario · confirm approvals before external use</span>
+  </div>
+</main>
+
+<script src="../../../assets/sogeti.js"></script>
+<script>
+(function () {
+  var btn = document.getElementById("copy-record");
+  if (!btn) return;
+  btn.addEventListener("click", function () {
+    var decision = document.getElementById("decision").value;
+    var conditions = document.getElementById("conditions").value.trim();
+    var text = "# Decision record — Northline phase 2 boundary\n\n" +
+      "- **Decision:** " + decision + "\n" +
+      "- **Date:** 14 November 2026\n" +
+      "- **Owner:** Chief Claims Officer\n" +
+      "- **Scope:** Phase 2 strangler boundary and claims intake slice\n\n" +
+      "## Conditions\n" + (conditions || "_None recorded._") + "\n";
+    Sogeti.copy(text, "Decision record copied as Markdown");
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northline claims platform — Sogeti pursuit</title>
+<meta name="description" content="A staged path from legacy claims processing to a live, owned service: 90-day proof, protected book, one operating model.">
+<link rel="stylesheet" href="../../../assets/sogeti.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- @include _partials/shapes.html -->
+<!-- @include _partials/header.html -->
+
+<main id="main">
+  <section class="hero hero--field" style="min-height:620px">
+    <div class="hero__field" aria-hidden="true"></div>
+    <div class="wrap hero__inner intro">
+      <div class="hero__copy">
+        <p class="kicker">Pursuit: cloud and AI modernization</p>
+        <h1 class="display">A shorter path from legacy to live.</h1>
+        <p class="lede">Northline’s claims platform carries two decades of process. We propose a staged move that protects the current book, proves the target in 90 days and gives operations a service it can run.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#context">Read the proposal
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <button class="btn btn--ghost" type="button" data-copy="#exec-summary" data-copy-message="Executive summary copied as Markdown">
+            <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy executive summary
+          </button>
+        </div>
+        <div class="hero__meta">
+          <span>Prepared for Northline Group</span>
+          <time datetime="2026-11-14">14 November 2026</time>
+          <span>Confidential</span>
+        </div>
+      </div>
+      <div class="cover-panel" aria-label="Document details">
+        <div>
+          <p class="cover-panel__label">Pursuit / working draft</p>
+          <p class="cover-panel__title">Northline claims platform</p>
+        </div>
+        <div class="cover-panel__meta">
+          <span><b>Prepared for</b><br>Chief Claims Officer, Northline Group</span>
+          <span><b>Prepared by</b><br>Sogeti client partner and solution lead</span>
+          <span><b>Decision requested</b><br>Approve a 90-day discovery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight section--white">
+    <div class="wrap">
+      <div class="brief-grid">
+        <div><b>The opportunity</b><p>Move claims from a batch-bound monolith to an event-driven service without destabilizing the current book.</p></div>
+        <div><b>The ask</b><p>One 90-day discovery, one joint team, one go/no-go on a production slice.</p></div>
+        <div><b>The commitment</b><p>Working software every two weeks, a named service owner from week one, and an exit plan at every gate.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--grey" id="context">
+    <div class="wrap doc-layout">
+      <div class="doc-main">
+        <div id="exec-summary" class="sr-only">
+# Northline claims platform — executive summary
+
+- **Situation:** Claims runs on a batch-bound monolith. Change is possible, but every release competes with the current book.
+- **Proposal:** A 90-day discovery that proves one production slice and the operating model around it.
+- **Approach:** Protect the book, isolate the first slice, prove it live, then scale by service, not by programme.
+- **Value case:** Faster cycle time, fewer manual touches, higher straight-through processing, lower cost per claim. Targets are planning assumptions, not commitments.
+- **Decision requested:** Approve a 90-day discovery with a joint team and a go/no-go at week 12.
+        </div>
+
+        <section class="doc-section" id="context">
+          <div class="doc-section__head"><span class="doc-section__num">01</span><h2>Situation</h2></div>
+          <p>Northline’s claims operation is good at the work it knows. It is also constrained by a platform that treats every change as a full-book event: pricing rules, document handling, payments and correspondence are coupled in the same release cycle.</p>
+          <p>The result is familiar. The business waits for change, the platform team protects stability, and the best people spend their time on workarounds. Nobody is failing. The architecture is doing what it was designed to do, twenty years after it was designed.</p>
+          <div class="callout callout--warn">
+            <h4>The risk is not the migration. It is the quiet loss of change capacity.</h4>
+            <p>Every quarter spent on a full-platform upgrade is a quarter the claims team cannot respond to a new product, a new regulation or a new channel. The cost is visible in the roadmap, not the run rate.</p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="listening">
+          <div class="doc-section__head"><span class="doc-section__num">02</span><h2>What we heard</h2></div>
+          <p>In six conversations across claims operations, architecture and finance, four constraints kept returning:</p>
+          <ul>
+            <li><strong>The current book cannot pause.</strong> Any approach that requires a big-bang cutover is a non-starter for the underwriting and claims leadership team.</li>
+            <li><strong>Batch is a business constraint, not just a technical one.</strong> Payment runs and correspondence windows are built around the nightly cycle.</li>
+            <li><strong>Change capacity is the scarce resource.</strong> The platform team is fully allocated to regulatory and keep-the-lights work.</li>
+            <li><strong>Nobody wants another programme.</strong> The ask is a service with an owner, not a three-year transformation with a steering committee.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section" id="approach">
+          <div class="doc-section__head"><span class="doc-section__num">03</span><h2>Approach</h2></div>
+          <p>We propose a 90-day discovery built around one production slice: first-notice-of-loss intake for a single product line. It is small enough to protect the book and real enough to test the operating model.</p>
+          <div class="steps mt-5">
+            <div class="step"><div class="step__num">01</div><h4>Protect</h4><p>Map the current book, freeze the interfaces that cannot move and define the rollback before anything is built.</p></div>
+            <div class="step"><div class="step__num">02</div><h4>Isolate</h4><p>Put a bounded slice behind an event contract. Keep the monolith as the system of record until the slice earns its place.</p></div>
+            <div class="step"><div class="step__num">03</div><h4>Prove</h4><p>Run the slice live for four weeks with a named operations owner, a fallback and a weekly service review.</p></div>
+            <div class="step"><div class="step__num">04</div><h4>Scale</h4><p>Scale by service, not by programme. Each additional slice has its own business case, owner and exit criteria.</p></div>
+          </div>
+          <div class="phasebar mt-6" aria-label="Discovery phases">
+            <div>Weeks 1–2<br>Protect</div><div>Weeks 3–6<br>Isolate</div><div>Weeks 7–10<br>Prove</div><div>Weeks 11–12<br>Decide</div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="evidence">
+          <div class="doc-section__head"><span class="doc-section__num">04</span><h2>Value case</h2></div>
+          <p>The case is deliberately narrow. We are not promising a transformed claims function in 90 days. We are testing whether one slice can move four operating numbers in the right direction.</p>
+          <div class="table-wrap mt-4">
+            <table class="table">
+              <caption>Figure 2. Planning assumptions for the first slice; not commitments. Baselines to be validated in discovery.</caption>
+              <thead><tr><th scope="col">Outcome</th><th scope="col" class="n">Current</th><th scope="col" class="n">Target</th><th scope="col">How we would know</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">Intake cycle time</td><td class="n">9 days</td><td class="n">3 days</td><td>Median time from first notice to a complete claim file</td></tr>
+                <tr><td class="strong">Manual touches per claim</td><td class="n">14</td><td class="n">5</td><td>Documented handoffs in the live slice</td></tr>
+                <tr><td class="strong">Straight-through intake</td><td class="n">41%</td><td class="n">70%</td><td>Claims accepted without re-keying</td></tr>
+                <tr><td class="strong">Cost per claim</td><td class="n">€38</td><td class="n">€24</td><td>Operations cost pool divided by claims processed</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="source mt-3">Planning assumptions owned by the joint business case. Review at week 12; no target is a commitment until the baseline is signed.</p>
+        </section>
+
+        <section class="doc-section" id="why">
+          <div class="doc-section__head"><span class="doc-section__num">05</span><h2>Why Sogeti</h2></div>
+          <ol class="numbered">
+            <li><h3>We run what we build</h3><p>The same team that designs the slice operates it through the four-week proof. There is no handover to a different delivery group at go-live.</p></li>
+            <li><h3>One team, not a relay</h3><p>Business analysis, architecture, engineering and operations sit in one squad with one backlog and one weekly decision forum.</p></li>
+            <li><h3>Evidence before scale</h3><p>Each slice has a baseline, a target and a stop rule. If the evidence is not there, we recommend stopping. That is a feature, not a failure.</p></li>
+            <li><h3>Local proximity, global bench</h3><p>A local team close enough to sit with claims operations, backed by Capgemini’s engineering and cloud practices when the problem needs them.</p></li>
+          </ol>
+        </section>
+
+        <section class="doc-section" id="team">
+          <div class="doc-section__head"><span class="doc-section__num">06</span><h2>Team and governance</h2></div>
+          <div class="table-wrap">
+            <table class="table table--compact">
+              <thead><tr><th scope="col">Role</th><th scope="col">Responsibility</th><th scope="col">Cadence</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">Client partner</td><td>Commercial ownership, escalation, go/no-go recommendation</td><td>Weekly</td></tr>
+                <tr><td class="strong">Solution lead</td><td>Architecture, slice design, technical quality</td><td>Daily</td></tr>
+                <tr><td class="strong">Operations owner</td><td>Service ownership, exceptions, acceptance</td><td>Daily during proof</td></tr>
+                <tr><td class="strong">Joint steering group</td><td>Scope, risk, investment decision</td><td>Weeks 2, 6, 12</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="doc-section" id="next">
+          <div class="doc-section__head"><span class="doc-section__num">07</span><h2>Next 30 days</h2></div>
+          <div class="timeline">
+            <div class="tl-item tl-item--done"><span class="tl-date">Week 1</span><h4>Mobilize</h4><p>Name the joint team, agree the slice, confirm access and baseline.</p></div>
+            <div class="tl-item"><span class="tl-date">Week 2</span><h4>Frame</h4><p>Map the current flow, interfaces and rollback. Agree the service owner.</p></div>
+            <div class="tl-item"><span class="tl-date">Weeks 3–4</span><h4>Build</h4><p>First working slice in a pre-production environment with real cases.</p></div>
+            <div class="tl-item"><span class="tl-date">Week 4</span><h4>Review</h4><p>Go/no-go on the four-week live proof. Decision, not a demo.</p></div>
+          </div>
+        </section>
+
+        <section class="doc-section">
+          <div class="callout callout--purple">
+            <h4>Decision requested</h4>
+            <p>Approve a 90-day discovery, a joint team of six and a go/no-go at week 12. We will bring the baseline, the slice design and the exit criteria to the first steering group.</p>
+            <div class="actions mt-4">
+              <a class="btn btn--primary" href="https://www.sogeti.com/contact-us/" target="_blank" rel="noopener">Discuss the proposal
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </a>
+              <button class="btn btn--ghost" type="button" data-print>
+                <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Print or save as PDF
+              </button>
+            </div>
+          </div>
+          <div class="signoff mt-5">
+            <p class="mono" style="font-size:.7rem;color:var(--blue)">Acknowledgement</p>
+            <div class="signoff__row">
+              <div><div class="signoff__line"></div><label>Northline Group</label></div>
+              <div><div class="signoff__line"></div><label>Sogeti</label></div>
+            </div>
+          </div>
+          <p class="scenario-note">Northline Group is an illustrative client scenario created for this reference. Names, baselines and targets are fictional planning assumptions. Replace them with approved client facts before external use.</p>
+        </section>
+      </div>
+
+      <aside class="doc-rail no-print" aria-label="Contents">
+        <p class="doc-rail__title">Contents</p>
+        <ol>
+          <li><a href="#context"><span>01</span>Situation</a></li>
+          <li><a href="#listening"><span>02</span>What we heard</a></li>
+          <li><a href="#approach"><span>03</span>Approach</a></li>
+          <li><a href="#evidence"><span>04</span>Value case</a></li>
+          <li><a href="#why"><span>05</span>Why Sogeti</a></li>
+          <li><a href="#team"><span>06</span>Team and governance</a></li>
+          <li><a href="#next"><span>07</span>Next 30 days</a></li>
+        </ol>
+        <button class="btn btn--ghost btn--sm" type="button" data-copy="#exec-summary" data-copy-message="Executive summary copied as Markdown">
+          <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy summary
+        </button>
+        <button class="btn btn--ghost btn--sm" type="button" data-print>
+          <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Print / PDF
+        </button>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<!-- @include _partials/footer.html -->
+<script src="../../../assets/sogeti.js"></script>
+</body>
+</html>

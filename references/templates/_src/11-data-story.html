@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The handover gap — Sogeti research 2026</title>
+<meta name="description" content="Illustrative survey of 612 delivery leaders on what happens to AI pilots after the demo: ownership, data contracts, rollback and measurement.">
+<link rel="stylesheet" href="../../../assets/sogeti.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- @include _partials/shapes.html -->
+<!-- @include _partials/header.html -->
+
+<main id="main">
+  <section class="data-hero" id="context">
+    <div class="wrap">
+      <p class="kicker">Research / AI delivery 2026</p>
+      <div class="data-hero__grid mt-5">
+        <div>
+          <h1 class="display display--s">Pilots are not the problem. Handovers are.</h1>
+          <p class="lede mt-4">We asked 612 delivery leaders what happens after the demo. The pattern is consistent: capability is ahead of ownership, and ownership is ahead of measurement.</p>
+          <div class="page-head__meta">
+            <span>n = 612</span>
+            <span>9 markets</span>
+            <span>Fielded September–October 2026</span>
+            <span>Illustrative survey</span>
+          </div>
+        </div>
+        <div>
+          <div class="data-hero__number">31%<small>of organizations with a live AI service have a named service owner.</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight section--white">
+    <div class="wrap">
+      <div class="grid grid--4">
+        <div class="stat"><div class="stat__value">68%</div><p class="stat__label">Have a pilot in production</p><p class="stat__note">At least one use case</p></div>
+        <div class="stat stat--vibrant"><div class="stat__value">31%</div><p class="stat__label">Have a named service owner</p><p class="stat__note">For the live service, not the pilot</p></div>
+        <div class="stat"><div class="stat__value">22%</div><p class="stat__label">Track an operating metric</p><p class="stat__note">Beyond model accuracy</p></div>
+        <div class="stat stat--red"><div class="stat__value">17%</div><p class="stat__label">Tested a rollback</p><p class="stat__note">With live-like traffic</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--grey" id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">01 / What the data says</p>
+          <h2 class="h2 mt-3">The gap is in the operating model, not the model.</h2>
+        </div>
+        <p class="lede">Respondents were most confident about experimentation and least confident about the conditions that make a service durable.</p>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart chart--bare">
+          <div class="chart__head"><div><p class="chart__title">What slows a pilot after the demo?</p><p class="chart__sub">Share of respondents selecting each barrier, top five</p></div><span class="tag tag--outline">n = 612</span></div>
+          <div class="bars">
+            <div class="bar-row"><span>Ownership</span><div class="bar-track"><i class="bar-fill" style="width:41%"></i></div><span class="bar-value">41%</span></div>
+            <div class="bar-row"><span>Data contracts</span><div class="bar-track"><i class="bar-fill bar-fill--vib" style="width:37%"></i></div><span class="bar-value">37%</span></div>
+            <div class="bar-row"><span>Risk and rollback</span><div class="bar-track"><i class="bar-fill" style="width:34%"></i></div><span class="bar-value">34%</span></div>
+            <div class="bar-row"><span>Measurement</span><div class="bar-track"><i class="bar-fill bar-fill--vib" style="width:29%"></i></div><span class="bar-value">29%</span></div>
+            <div class="bar-row"><span>Funding model</span><div class="bar-track"><i class="bar-fill" style="width:21%"></i></div><span class="bar-value">21%</span></div>
+          </div>
+          <p class="chart__source">Source: Sogeti AI delivery survey 2026, illustrative data for this reference. Multiple selections allowed.</p>
+        </div>
+
+        <div class="chart chart--bare">
+          <div class="chart__head"><div><p class="chart__title">What is in place as services scale</p><p class="chart__sub">Share with each control, by stage</p></div><span class="tag tag--outline">%</span></div>
+          <svg viewBox="0 0 520 340" role="img" aria-labelledby="scale-title scale-desc">
+            <title id="scale-title">Ownership, operating metrics and tested rollback are more common at scale, but ownership leads.</title>
+            <desc id="scale-desc">Grouped bar chart comparing pilot, production and scaled stages across three controls: named owner, operating metric and tested rollback.</desc>
+            <g class="grid-line"><line x1="48" y1="40" x2="500" y2="40"/><line x1="48" y1="100" x2="500" y2="100"/><line x1="48" y1="160" x2="500" y2="160"/><line x1="48" y1="220" x2="500" y2="220"/></g>
+            <g class="axis-line"><line x1="48" y1="280" x2="500" y2="280"/><line x1="48" y1="40" x2="48" y2="280"/></g>
+            <g fill="#5d6973" font-family="Ubuntu Mono, monospace" font-size="9"><text x="18" y="44">100</text><text x="24" y="104">75</text><text x="24" y="164">50</text><text x="24" y="224">25</text><text x="30" y="284">0</text><text x="48" y="300">Pilot</text><text x="190" y="300">Production</text><text x="350" y="300">Scaled</text></g>
+            <!-- pilot: owner 31, metric 22, rollback 17 -->
+            <rect x="68" y="207" width="22" height="73" fill="#0070ad"/><rect x="94" y="228" width="22" height="52" fill="#12abdb"/><rect x="120" y="240" width="22" height="40" fill="#80b8d6"/>
+            <!-- production: 48,39,35 -->
+            <rect x="220" y="165" width="22" height="115" fill="#0070ad"/><rect x="246" y="186" width="22" height="94" fill="#12abdb"/><rect x="272" y="196" width="22" height="84" fill="#80b8d6"/>
+            <!-- scaled: 72,64,58 -->
+            <rect x="380" y="107" width="22" height="173" fill="#0070ad"/><rect x="406" y="126" width="22" height="154" fill="#12abdb"/><rect x="432" y="141" width="22" height="139" fill="#80b8d6"/>
+            <g fill="#14181d" font-family="Ubuntu Mono, monospace" font-size="10" font-weight="700"><text x="72" y="199">31</text><text x="224" y="157">48</text><text x="384" y="99">72</text></g>
+          </svg>
+          <div class="legend"><span><i></i>Named owner</span><span class="l-vib"><i></i>Operating metric</span><span class="l-tint"><i></i>Tested rollback</span></div>
+          <p class="chart__source">Source: Sogeti AI delivery survey 2026, illustrative data. Base: respondents with at least one live service at each stage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white" id="evidence">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <p class="kicker">02 / What it means</p>
+          <h2 class="h2 mt-3">Capability is ahead of ownership. Ownership is ahead of measurement.</h2>
+          <p class="lede mt-4">The ordering matters. Teams learn to build before they learn to run. Then they learn to run before they learn to prove. The 90-day proof is a way to compress that sequence.</p>
+          <ol class="finding-list mt-5">
+            <li><b>Start with the owner, not the model.</b><span>A named owner changes the design conversation. It makes the queue, the exception and the rollback part of the brief.</span></li>
+            <li><b>Put the metric in the room.</b><span>An operating metric is a governance device. It gives the service a reason to exist beyond the demo.</span></li>
+            <li><b>Test the switch before the scale.</b><span>Rollback is the cheapest risk control available. It is also the one most often left to a document.</span></li>
+            <li><b>Treat scale as a series of services.</b><span>Programmes scale ambition. Services scale evidence. The second is slower and more durable.</span></li>
+          </ol>
+        </div>
+        <aside>
+          <div class="callout callout--purple">
+            <h4>Method and limits</h4>
+            <p>Online survey of 612 directors and above across nine markets, fielded September–October 2026. Self-reported; sample skews toward organizations with an existing AI program. Percentages are rounded. This is an illustrative dataset for the reference, not a published Sogeti study.</p>
+          </div>
+          <div class="card card--pad-lg mt-5">
+            <p class="card__meta">What we asked</p>
+            <ul class="small">
+              <li>Which AI use cases are live in production today?</li>
+              <li>Who is accountable for the service after go-live?</li>
+              <li>Which operating metric is reviewed monthly?</li>
+              <li>Has the rollback been tested with live-like traffic?</li>
+            </ul>
+            <button class="btn btn--ghost btn--sm mt-4" type="button" data-copy="#research-summary" data-copy-message="Key findings copied as Markdown">
+              <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy key findings
+            </button>
+          </div>
+        </aside>
+      </div>
+      <div id="research-summary" class="sr-only">
+# The handover gap — key findings
+
+- 68% have a pilot in production; only 31% have a named service owner.
+- 22% track an operating metric beyond model accuracy.
+- 17% have tested a rollback with live-like traffic.
+- Top barriers: ownership 41%, data contracts 37%, risk and rollback 34%, measurement 29%, funding 21%.
+- Capability is ahead of ownership; ownership is ahead of measurement.
+      </div>
+
+      <div class="callout callout--warn mt-6">
+        <h4>One caveat before you quote this</h4>
+        <p>This is an illustrative dataset created for a design reference. Do not cite it as a Sogeti publication. If you need a real statistic, use an approved Sogeti or Capgemini source with a date and a methodology note.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--grey" id="next">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <p class="kicker">03 / The next question</p>
+          <h2 class="h2 mt-3">Which handover will you fix first?</h2>
+          <p class="lede mt-4">Bring one live use case. We will trace it from input to decision and show you where the ownership, data, risk and measurement handovers break.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn--primary" href="https://www.sogeti.com/contact-us/" target="_blank" rel="noopener">Book a working session
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <button class="btn btn--ghost" type="button" data-print>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Print / PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- @include _partials/footer.html -->
+<script src="../../../assets/sogeti.js"></script>
+</body>
+</html>

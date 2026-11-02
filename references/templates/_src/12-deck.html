@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The handover gap — Sogeti executive readout</title>
+<meta name="description" content="An eight-slide executive readout on moving AI pilots into owned, measured services.">
+<link rel="stylesheet" href="../../../assets/sogeti.css">
+<style media="print">
+@page { size: 297mm 167mm; margin: 0; }
+.slide, .slide[hidden] { width: 100%; height: 167mm; padding: 14mm; }
+.slide--cover .slide__shape { display: block !important; }
+</style>
+</head>
+<body class="deck-body">
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- @include _partials/shapes.html -->
+
+<header class="deck-top no-print">
+  <div class="wrap deck-top__inner">
+    <img src="../../../assets/logos/sogeti-logo-color.png" width="128" height="67" alt="Sogeti, part of Capgemini">
+    <div class="deck-controls">
+      <button type="button" data-deck-prev aria-label="Previous slide"><svg class="icon" aria-hidden="true" style="transform:rotate(90deg)"><use href="#i-chev"/></svg></button>
+      <span class="deck-counter" id="deck-counter" aria-live="polite">01 / 08</span>
+      <button type="button" data-deck-next aria-label="Next slide"><svg class="icon" aria-hidden="true" style="transform:rotate(-90deg)"><use href="#i-chev"/></svg></button>
+      <button class="wide" type="button" data-deck-notes aria-pressed="false" aria-label="Toggle speaker notes"><span>Notes</span></button>
+      <button class="wide" type="button" data-deck-full aria-label="Toggle full screen"><span>Full screen</span></button>
+      <button class="wide" type="button" data-print aria-label="Print or save as PDF"><span>Print</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="deck-stage">
+  <div class="deck">
+    <section class="slide slide--cover is-active" data-slide="1" data-notes="Open with the tension. Every organization has a demo. Few have a service. This is not a model problem; it is a handover problem.">
+      <div class="slide__shape" aria-hidden="true"></div>
+      <p class="slide__eyebrow">Sogeti / Executive readout / 14 November 2026</p>
+      <h1 class="display mt-4">The handover gap.</h1>
+      <p class="lede mt-4" style="max-width:38ch">Why AI value stalls between the demo and the service, and what to fix before the next go-live.</p>
+      <div class="slide__foot"><span>Northline Group / confidential</span><span>01</span></div>
+    </section>
+
+    <section class="slide slide--statement" data-slide="2" data-notes="Pause here. The statement is deliberately blunt. The demo is usually the least surprising part of the system." hidden aria-hidden="true">
+      <p class="slide__eyebrow">The premise</p>
+      <div class="slide__big mt-6">The demo is solved. The handover is not.</div>
+      <div class="slide__grid slide__grid--3 mt-7">
+        <div class="slide__item"><b>01</b><h3>Ownership</h3><p>Who answers for the service on the Monday after go-live?</p></div>
+        <div class="slide__item"><b>02</b><h3>Data</h3><p>Who guarantees the input next quarter?</p></div>
+        <div class="slide__item"><b>03</b><h3>Measurement</h3><p>Which operating number moves, and who reviews it?</p></div>
+      </div>
+      <div class="slide__foot"><span>The handover gap</span><span>02</span></div>
+    </section>
+
+    <section class="slide" data-slide="3" data-notes="Four transfers of responsibility. If any one is missing, the service is running on borrowed time. Keep this slide up while you discuss the client’s own gaps." hidden aria-hidden="true">
+      <p class="slide__eyebrow">The model</p>
+      <h2 class="mt-3">Four handovers decide the outcome.</h2>
+      <div class="slide__grid slide__grid--4 mt-6">
+        <div class="slide__item"><b>01</b><h3>Ownership</h3><p>From the build team to the business owner. A name, a budget and an escalation path.</p></div>
+        <div class="slide__item"><b>02</b><h3>Data</h3><p>From an extract to a contract. Schema, freshness and a named owner on the source.</p></div>
+        <div class="slide__item"><b>03</b><h3>Risk</h3><p>From a review to runtime. Thresholds, human review, rollback and an incident path.</p></div>
+        <div class="slide__item"><b>04</b><h3>Measurement</h3><p>From accuracy to outcome. A baseline, a target and a review date.</p></div>
+      </div>
+      <div class="slide__foot"><span>Four handovers</span><span>03</span></div>
+    </section>
+
+    <section class="slide" data-slide="4" data-notes="This is the evidence test. If the client cannot show these artifacts, the handover has not happened, regardless of how good the model is." hidden aria-hidden="true">
+      <p class="slide__eyebrow">The evidence test</p>
+      <h2 class="mt-3">What good handover looks like.</h2>
+      <div class="table-wrap mt-5">
+        <table class="table">
+          <thead><tr><th scope="col">Handover</th><th scope="col">Question</th><th scope="col">Evidence</th></tr></thead>
+          <tbody>
+            <tr><td class="strong">Ownership</td><td>Who is accountable?</td><td>A name in the service catalog, with budget</td></tr>
+            <tr><td class="strong">Data</td><td>Which input can stop it?</td><td>A monitored contract with a fallback</td></tr>
+            <tr><td class="strong">Risk</td><td>Who can switch it off?</td><td>A tested rollback and an incident path</td></tr>
+            <tr><td class="strong">Measurement</td><td>Which number moves?</td><td>A baseline, a target and a review date</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="slide__foot"><span>Evidence over assertion</span><span>04</span></div>
+    </section>
+
+    <section class="slide" data-slide="5" data-notes="The survey is illustrative for this reference. In a live readout, replace it with an approved Sogeti or client data source and keep the source line visible." hidden aria-hidden="true">
+      <p class="slide__eyebrow">Where it breaks</p>
+      <h2 class="mt-3">Ownership is the first constraint, not the last.</h2>
+      <div class="bars mt-6" style="max-width:100%">
+        <div class="bar-row"><span>Ownership</span><div class="bar-track"><i class="bar-fill" style="width:41%"></i></div><span class="bar-value">41%</span></div>
+        <div class="bar-row"><span>Data contracts</span><div class="bar-track"><i class="bar-fill bar-fill--vib" style="width:37%"></i></div><span class="bar-value">37%</span></div>
+        <div class="bar-row"><span>Risk and rollback</span><div class="bar-track"><i class="bar-fill" style="width:34%"></i></div><span class="bar-value">34%</span></div>
+        <div class="bar-row"><span>Measurement</span><div class="bar-track"><i class="bar-fill bar-fill--vib" style="width:29%"></i></div><span class="bar-value">29%</span></div>
+        <div class="bar-row"><span>Funding model</span><div class="bar-track"><i class="bar-fill" style="width:21%"></i></div><span class="bar-value">21%</span></div>
+      </div>
+      <p class="source mt-5">Sogeti AI delivery survey 2026, illustrative data for this reference. Multiple selections allowed.</p>
+      <p class="mt-6" style="font-size:clamp(1rem,1.6vw,1.3rem);max-width:54ch"><strong>So what:</strong> make the owner the first deliverable, not the last signature.</p>
+      <div class="slide__foot"><span>What slows a pilot after the demo</span><span>05</span></div>
+    </section>
+
+    <section class="slide" data-slide="6" data-notes="The Northline story is a composite scenario. Use it to make the model concrete, then invite the client to substitute their own live case." hidden aria-hidden="true">
+      <p class="slide__eyebrow">Proof / Northline Group</p>
+      <h2 class="mt-3">Nine days to three. Without stopping the book.</h2>
+      <div class="slide__grid slide__grid--3 mt-6">
+        <div class="slide__item"><b>9 → 3</b><h3>Days to complete intake</h3><p>Median, first live slice, weeks 9–12.</p></div>
+        <div class="slide__item"><b>41 → 70%</b><h3>Straight-through intake</h3><p>Claims accepted without re-keying.</p></div>
+        <div class="slide__item"><b>14 → 5</b><h3>Manual touches</h3><p>Documented handoffs in the live slice.</p></div>
+      </div>
+      <p class="source mt-5">Client-reported outcomes for an illustrative scenario. Replace with approved, verified client data before external use.</p>
+      <div class="slide__foot"><span>The handover, in practice</span><span>06</span></div>
+    </section>
+
+    <section class="slide" data-slide="7" data-notes="This is the ask. Not a programme. One slice, one owner, one number, one gate. Get the decision before discussing scale." hidden aria-hidden="true">
+      <p class="slide__eyebrow">The proposal</p>
+      <h2 class="mt-3">One slice. One owner. One number. One gate.</h2>
+      <div class="slide__grid slide__grid--3 mt-6">
+        <div class="slide__item"><b>01 · Protect</b><h3>Keep the book running</h3><p>Freeze interfaces, define the rollback and agree the dual-run window.</p></div>
+        <div class="slide__item"><b>02 · Prove</b><h3>Run one slice live</h3><p>Four weeks, real cases, a named service owner and a weekly operating review.</p></div>
+        <div class="slide__item"><b>03 · Decide</b><h3>Gate at week 12</h3><p>Go/no-go on evidence. Scale by service, or stop and stop the spend.</p></div>
+      </div>
+      <div class="slide__foot"><span>The 90-day proof</span><span>07</span></div>
+    </section>
+
+    <section class="slide slide--cover" data-slide="8" data-notes="Close on the decision, not the vision. Ask for the boundary and the proof. Offer the working session as the next step." hidden aria-hidden="true">
+      <div class="slide__shape" aria-hidden="true"></div>
+      <p class="slide__eyebrow">Decision</p>
+      <h2 class="display mt-4" style="font-size:clamp(2rem,5vw,4rem)">Approve the boundary. Fund the proof.</h2>
+      <p class="lede mt-4" style="max-width:34ch">One 90-day discovery. One joint team. One go/no-go on a production slice.</p>
+      <div class="slide__foot"><span>sogeti.com / part of Capgemini</span><span>08</span></div>
+    </section>
+  </div>
+</main>
+
+<div class="deck-progress no-print" aria-hidden="true"><i id="deck-progress"></i></div>
+<div class="deck-hint no-print">← → to navigate · N for notes</div>
+<div class="deck-notes" id="deck-notes" hidden><b>Speaker notes</b><span id="deck-notes-text"></span></div>
+
+<script src="../../../assets/sogeti.js"></script>
+<script>
+(function () {
+  var slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
+  var counter = document.getElementById("deck-counter");
+  var progress = document.getElementById("deck-progress");
+  var notes = document.getElementById("deck-notes");
+  var notesText = document.getElementById("deck-notes-text");
+  var notesBtn = document.querySelector("[data-deck-notes]");
+  var i = 0;
+
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach(function (s, j) {
+      var on = j === i;
+      s.classList.toggle("is-active", on);
+      s.hidden = !on;
+      s.setAttribute("aria-hidden", on ? "false" : "true");
+    });
+    counter.textContent = String(i + 1).padStart(2, "0") + " / " + String(slides.length).padStart(2, "0");
+    progress.style.width = ((i + 1) / slides.length * 100) + "%";
+    notesText.textContent = slides[i].getAttribute("data-notes") || "";
+  }
+  document.querySelectorAll("[data-deck-next]").forEach(function (b) { b.addEventListener("click", function () { show(i + 1); }); });
+  document.querySelectorAll("[data-deck-prev]").forEach(function (b) { b.addEventListener("click", function () { show(i - 1); }); });
+  document.addEventListener("keydown", function (e) {
+    if (e.target.matches("input, textarea, select")) return;
+    if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") { e.preventDefault(); show(i + 1); }
+    if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); show(i - 1); }
+    if (e.key === "Home") { e.preventDefault(); show(0); }
+    if (e.key === "End") { e.preventDefault(); show(slides.length - 1); }
+    if (e.key.toLowerCase() === "n") { e.preventDefault(); toggleNotes(); }
+    if (e.key.toLowerCase() === "f") { e.preventDefault(); toggleFull(); }
+  });
+  function toggleNotes() {
+    var on = notes.hidden;
+    notes.hidden = !on;
+    notesBtn.setAttribute("aria-pressed", on ? "true" : "false");
+  }
+  if (notesBtn) notesBtn.addEventListener("click", toggleNotes);
+  function toggleFull() {
+    if (!document.fullscreenElement) { if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen(); }
+    else if (document.exitFullscreen) document.exitFullscreen();
+  }
+  var full = document.querySelector("[data-deck-full]");
+  if (full) full.addEventListener("click", toggleFull);
+  show(0);
+})();
+</script>
+</body>
+</html>

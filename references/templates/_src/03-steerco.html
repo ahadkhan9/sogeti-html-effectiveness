@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northline claims platform — Steerco 04</title>
+<meta name="description" content="Phase 2 steering group: delivery confidence, three decisions, risks and actions for the Northline claims platform.">
+<link rel="stylesheet" href="../../../assets/sogeti.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- @include _partials/shapes.html -->
+<!-- @include _partials/header.html -->
+
+<main id="main">
+  <section class="page-head">
+    <div class="page-head__shape" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="kicker">Steerco 04 / Northline claims platform</p>
+      <h1 class="display display--s">Confidence is up. Capacity is the constraint.</h1>
+      <p class="lede">Phase 2 is six weeks in. The first slice is live, the rollback has been tested and the team is asking for one decision that protects the next gate.</p>
+      <div class="page-head__meta">
+        <span>Thursday 14 November 2026</span>
+        <span>09:00–10:30 CET</span>
+        <span>Northline Group, Amsterdam</span>
+        <span>Chair: Chief Claims Officer</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight section--white">
+    <div class="wrap">
+      <div class="status-strip">
+        <div><span class="status status--warn">Amber</span><b>Overall</b><p>Delivery on track; one decision needed on capacity.</p></div>
+        <div><span class="status status--ok">Green</span><b>Scope</b><p>First slice live; no scope change requested.</p></div>
+        <div><span class="status status--warn">Watch</span><b>Schedule</b><p>Two-week risk to the week 12 gate if capacity is not resolved.</p></div>
+        <div><span class="status status--ok">Green</span><b>Budget</b><p>Within the approved phase 2 envelope.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--grey" id="context">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <p class="kicker">01 / Decisions required today</p>
+          <h2 class="h2 mt-3">Three decisions, one meeting.</h2>
+          <p class="lede mt-4">The team can proceed on two items without a decision. The third needs the steering group today to protect the week 12 gate.</p>
+
+          <div class="decision-list mt-6" id="decisions">
+            <label class="decision">
+              <input type="checkbox" checked data-decision="D1" data-label="Approve the claims intake slice for production rollout">
+              <span class="decision__body">
+                <span class="decision__id">D1 · Approve</span>
+                <strong>Approve the claims intake slice for production rollout.</strong>
+                <span class="decision__note">The slice has run live for four weeks. Error rate is inside the agreed threshold; the rollback has been tested twice. <em>Recommendation: approve.</em></span>
+              </span>
+            </label>
+            <label class="decision">
+              <input type="checkbox" checked data-decision="D2" data-label="Fund two additional operations analysts for the proof period">
+              <span class="decision__body">
+                <span class="decision__id">D2 · Fund</span>
+                <strong>Fund two additional operations analysts for the proof period.</strong>
+                <span class="decision__note">The exception queue is the binding constraint. Two analysts for six weeks protects the week 12 readout. <em>Recommendation: approve.</em></span>
+              </span>
+            </label>
+            <label class="decision">
+              <input type="checkbox" data-decision="D3" data-label="Defer the second product line to phase 3">
+              <span class="decision__body">
+                <span class="decision__id">D3 · Decide</span>
+                <strong>Defer the second product line to phase 3.</strong>
+                <span class="decision__note">Adding a second line before the first is stable would dilute the proof. This is a scope decision, not a technical one. <em>Recommendation: defer.</em></span>
+              </span>
+            </label>
+          </div>
+          <div class="actions mt-5 no-print">
+            <button class="btn btn--primary" type="button" id="copy-decisions">
+              <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy decision record
+            </button>
+            <span class="small muted" id="decision-count" aria-live="polite">3 of 3 marked</span>
+          </div>
+        </div>
+
+        <aside class="card card--pad-lg" aria-label="Meeting note">
+          <p class="card__meta">Chair’s note</p>
+          <p class="lede" style="font-size:1.15rem">“We are not here to approve a programme. We are here to keep one service alive and decide what it is allowed to become.”</p>
+          <hr class="mt-5">
+          <dl class="meta-list mt-4">
+            <div><dt>Attendees</dt><dd>CPO, CTO, Head of Claims Ops, Sogeti client partner</dd></div>
+            <div><dt>Apologies</dt><dd>Chief Risk Officer</dd></div>
+            <div><dt>Papers</dt><dd>Delivery readout, risk register, decision log</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white" id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">02 / Delivery confidence</p>
+          <h2 class="h2 mt-3">The first slice is live. The plan is not the point.</h2>
+        </div>
+        <p class="lede">At week 8, 82% of the phase scope is complete against a plan of 100%. The gap is concentrated in exception handling, not engineering.</p>
+      </div>
+
+      <div class="split split--wide">
+        <div class="chart chart--bare">
+          <div class="chart__head">
+            <div><p class="chart__title">Phase 2 scope completion</p><p class="chart__sub">Percent of agreed scope, weeks 1–12</p></div>
+            <span class="tag tag--warn">Week 8</span>
+          </div>
+          <svg viewBox="0 0 720 320" role="img" aria-labelledby="chart-title chart-desc">
+            <title id="chart-title">Phase 2 scope completion is 82 percent at week 8 against a plan of 100 percent.</title>
+            <desc id="chart-desc">Line chart from week 1 to week 12. The plan rises linearly to 100 percent at week 8. Actual completion rises to 82 percent at week 8, then a dashed projection runs to 96 percent at week 12.</desc>
+            <g class="grid-line">
+              <line x1="56" y1="40" x2="690" y2="40"/><line x1="56" y1="100" x2="690" y2="100"/>
+              <line x1="56" y1="160" x2="690" y2="160"/><line x1="56" y1="220" x2="690" y2="220"/>
+            </g>
+            <g class="axis-line"><line x1="56" y1="280" x2="690" y2="280"/><line x1="56" y1="40" x2="56" y2="280"/></g>
+            <g fill="#5d6973" font-family="Ubuntu Mono, monospace" font-size="10">
+              <text x="28" y="44">100%</text><text x="34" y="104">75%</text><text x="34" y="164">50%</text><text x="34" y="224">25%</text><text x="40" y="284">0%</text>
+              <text x="56" y="300" text-anchor="middle">W1</text>
+              <text x="223" y="300" text-anchor="middle">W4</text>
+              <text x="445" y="300" text-anchor="middle">W8</text>
+              <text x="668" y="300" text-anchor="middle">W12</text>
+            </g>
+            <polyline points="56,280 445,40 668,40" fill="none" stroke="#b7c3cc" stroke-width="2" stroke-dasharray="5 5"/>
+            <text x="462" y="34" fill="#5d6973" font-family="Ubuntu Mono, monospace" font-size="10">Plan</text>
+            <defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12abdb" stop-opacity=".22"/><stop offset="1" stop-color="#12abdb" stop-opacity="0"/></linearGradient></defs>
+            <path d="M56,280 L112,261 L167,242 L223,222 L278,198 L334,174 L390,148 L445,83 L445,280 Z" fill="url(#area)"/>
+            <polyline points="56,280 112,261 167,242 223,222 278,198 334,174 390,148 445,83" fill="none" stroke="#0070ad" stroke-width="3" stroke-linejoin="round"/>
+            <polyline points="445,83 501,73 556,64 612,57 668,50" fill="none" stroke="#0070ad" stroke-width="2" stroke-dasharray="4 5" opacity=".75"/>
+            <text x="520" y="66" fill="#5d6973" font-family="Ubuntu Mono, monospace" font-size="10">Projection</text>
+            <circle cx="445" cy="83" r="5" fill="#0070ad"/>
+            <line x1="445" y1="83" x2="445" y2="280" stroke="#f53b53" stroke-width="1" stroke-dasharray="3 4"/>
+            <text x="455" y="76" fill="#a31335" font-family="Ubuntu Mono, monospace" font-size="11" font-weight="700">82% actual</text>
+            <text x="455" y="94" fill="#5d6973" font-family="Ubuntu Mono, monospace" font-size="10">week 8 gate</text>
+          </svg>
+          <p class="chart__source">Joint delivery dashboard, week 8. Illustrative delivery data for this reference scenario.</p>
+        </div>
+
+        <div>
+          <div class="stack">
+            <div class="stat"><div class="stat__value">82%</div><p class="stat__label">Phase scope complete</p><p class="stat__note">Plan at week 8: 100%</p></div>
+            <div class="stat stat--vibrant"><div class="stat__value">4.1%</div><p class="stat__label">Exception rate</p><p class="stat__note">Threshold: 5.0%</p></div>
+            <div class="stat stat--red"><div class="stat__value">11</div><p class="stat__label">Open defects</p><p class="stat__note">3 high, 8 medium</p></div>
+          </div>
+          <div class="callout callout--ok mt-5">
+            <h4>What is working</h4>
+            <p>The slice has processed live claims for four weeks. The rollback was tested twice and the operations team can run the service without the build team in the room.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--grey" id="evidence">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">03 / Milestones and risk</p>
+          <h2 class="h2 mt-3">What is behind us, and what can still move.</h2>
+        </div>
+        <p class="lede">Two milestones are complete. The week 12 gate is at risk from exception capacity, not from the platform.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item tl-item--done"><span class="tl-date">W1–2</span><h4>Mobilize</h4><p>Joint team named; slice agreed; rollback defined.</p></div>
+        <div class="tl-item tl-item--done"><span class="tl-date">W3–4</span><h4>First slice</h4><p>Intake slice running in pre-production with real cases.</p></div>
+        <div class="tl-item tl-item--risk"><span class="tl-date">W5–8</span><h4>Live proof</h4><p>Live for four weeks; exception queue above target.</p></div>
+        <div class="tl-item"><span class="tl-date">W9–12</span><h4>Gate</h4><p>Readout, value case and go/no-go on phase 3.</p></div>
+      </div>
+
+      <div class="grid grid--2 mt-7">
+        <div class="table-wrap">
+          <table class="table table--compact table--fit">
+            <caption>Risk register — top three, week 8.</caption>
+            <thead><tr><th scope="col">Risk</th><th scope="col">Sev.</th><th scope="col">Mitigation</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Exception queue capacity</td><td><span class="status status--risk">High</span></td><td>Fund two analysts for six weeks (D2)</td></tr>
+              <tr><td class="strong">Second product line pressure</td><td><span class="status status--warn">Med</span></td><td>Defer to phase 3 (D3)</td></tr>
+              <tr><td class="strong">Knowledge concentration in two engineers</td><td><span class="status status--warn">Med</span></td><td>Pairing plan and runbook review by week 10</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table class="table table--compact table--fit">
+            <caption>Actions — owners and dates.</caption>
+            <thead><tr><th scope="col">Action</th><th scope="col">Owner</th><th scope="col">Due</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Publish exception playbook</td><td>Head of Claims Ops</td><td>18 Nov</td></tr>
+              <tr><td class="strong">Complete rollback rehearsal 3</td><td>Solution lead</td><td>21 Nov</td></tr>
+              <tr><td class="strong">Agree phase 3 value case</td><td>Client partner</td><td>28 Nov</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="scenario-note">Northline Group and all delivery figures are an illustrative scenario for this reference. Replace with approved project data before circulation.</p>
+    </div>
+  </section>
+
+  <section class="section section--white" id="next">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <p class="kicker">04 / What changes if we decide</p>
+          <h2 class="h2 mt-3">Approve capacity, protect the gate.</h2>
+          <p class="lede mt-4">If D1 and D2 are approved today, the team can hold the week 12 gate and bring a phase 3 proposal with evidence rather than an estimate. If D3 is deferred, the scope stays honest.</p>
+          <div class="actions mt-5 no-print">
+            <button class="btn btn--primary" type="button" data-copy="#decision-record" data-copy-message="Decision record copied as Markdown">
+              <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy decision record
+            </button>
+            <button class="btn btn--ghost" type="button" data-print>
+              <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Print / PDF
+            </button>
+          </div>
+        </div>
+        <div class="callout callout--purple">
+          <h4>Next steerco</h4>
+          <p>Thursday 12 December 2026, 09:00 CET. Phase 3 proposal, value case and the first month of live service data.</p>
+          <p class="mt-3"><strong>Owner:</strong> Sogeti client partner<br><strong>Papers due:</strong> 5 December 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- @include _partials/footer.html -->
+<script src="../../../assets/sogeti.js"></script>
+<script>
+(function () {
+  var boxes = Array.prototype.slice.call(document.querySelectorAll("[data-decision]"));
+  var count = document.getElementById("decision-count");
+  var record = document.getElementById("decision-record");
+  function build() {
+    var chosen = boxes.filter(function (b) { return b.checked; });
+    var lines = chosen.map(function (b) {
+      return "- **" + b.getAttribute("data-decision") + "** — " + b.getAttribute("data-label") + " (approved in Steerco 04, 14 Nov 2026)";
+    });
+    var text = "# Northline claims platform — Steerco 04 decision record\n\n" +
+      (lines.length ? lines.join("\n") : "_No decisions marked._") +
+      "\n\nChair: Chief Claims Officer\nDate: 14 November 2026\n";
+    if (record) record.textContent = text;
+    if (count) count.textContent = chosen.length + " of " + boxes.length + " marked";
+  }
+  boxes.forEach(function (b) { b.addEventListener("change", build); });
+  var btn = document.getElementById("copy-decisions");
+  if (btn) btn.addEventListener("click", function () {
+    build();
+    Sogeti.copy(record.textContent.trim(), "Decision record copied as Markdown");
+  });
+  build();
+})();
+</script>
+</body>
+</html>

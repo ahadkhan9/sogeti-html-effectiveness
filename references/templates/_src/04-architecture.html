@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northline claims platform — target architecture</title>
+<meta name="description" content="Current and target architecture for the Northline claims platform: one event seam, a strangler boundary and owned services.">
+<link rel="stylesheet" href="../../../assets/sogeti.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- @include _partials/shapes.html -->
+<!-- @include _partials/header.html -->
+
+<main id="main">
+  <section class="page-head" id="context">
+    <div class="page-head__shape" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="kicker">Architecture / Northline claims platform</p>
+      <h1 class="display display--s">One event seam. Two release paths. No big-bang cutover.</h1>
+      <p class="lede">The target is not a new platform. It is a boundary that lets the claims monolith keep running while one slice at a time earns its way out.</p>
+      <div class="page-head__meta">
+        <span>Version 2.3</span>
+        <time datetime="2026-11-14">14 November 2026</time>
+        <span>Owner: Solution architecture</span>
+        <span class="status status--warn">For review</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">01 / The shape of the change</p>
+          <h2 class="h2 mt-3">The architecture is a boundary, not a destination.</h2>
+        </div>
+        <p class="lede">Two views. The current state explains why change is expensive. The target state shows where the seam goes and what stays behind it.</p>
+      </div>
+
+      <div class="card card--pad-lg">
+        <div class="tabs" role="tablist" aria-label="Architecture views" data-tabs>
+          <button class="tab" id="tab-current" role="tab" aria-selected="true" aria-controls="panel-current" tabindex="0">Current state</button>
+          <button class="tab" id="tab-target" role="tab" aria-selected="false" aria-controls="panel-target" tabindex="-1">Target state</button>
+        </div>
+
+        <div class="tabpanel" id="panel-current" role="tabpanel" aria-labelledby="tab-current" tabindex="0">
+          <div class="diagram-wrap mt-4">
+            <img src="../../../assets/illustrations/architecture-current.svg" width="1000" height="560" alt="Current architecture: four channels connect to a single claims monolith containing policy, claims, billing and documents, all on a shared database with a nightly batch scheduler.">
+          </div>
+          <div class="arch-legend" aria-label="Diagram legend">
+            <span><i></i>Existing system</span>
+            <span class="l-core"><i></i>Shared core</span>
+            <span class="l-ext"><i></i>External party</span>
+            <span class="l-boundary"><i></i>Release boundary</span>
+          </div>
+          <div class="arch-notes">
+            <div><b>One release unit</b><p>Policy, claims, billing and documents share a release cycle. A change to one is a change to all.</p></div>
+            <div><b>Shared schema</b><p>Every module reads and writes the same database. There is no contract between them, only convention.</p></div>
+            <div><b>Nightly batch</b><p>Payments and correspondence run on a schedule. The business day ends when the batch ends.</p></div>
+          </div>
+        </div>
+
+        <div class="tabpanel" id="panel-target" role="tabpanel" aria-labelledby="tab-target" tabindex="0" hidden>
+          <div class="diagram-wrap mt-4">
+            <img src="../../../assets/illustrations/architecture-target.svg" width="1000" height="560" alt="Target architecture: channels enter through an API gateway and identity layer, domain services exchange events over a backbone, and policy administration remains the system of record inside a strangler boundary.">
+          </div>
+          <div class="arch-legend" aria-label="Diagram legend">
+            <span class="l-new"><i></i>New service</span>
+            <span class="l-event"><i></i>Event backbone</span>
+            <span class="l-core"><i></i>Legacy system of record</span>
+            <span class="l-ext"><i></i>External party</span>
+            <span class="l-boundary"><i></i>Strangler boundary</span>
+          </div>
+          <div class="arch-notes">
+            <div><b>Event seam</b><p>Services publish facts, not commands. The event log is replayable, auditable and independent of any one consumer.</p></div>
+            <div><b>Strangler boundary</b><p>Policy administration stays the system of record until phase 3. The boundary makes that temporary truth explicit.</p></div>
+            <div><b>Owned services</b><p>Intake, assessment, payments and correspondence each own their data, release and service level.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout--purple mt-6">
+        <h4>What this architecture buys, and what it costs</h4>
+        <p>It buys independent release, a replayable audit trail and a credible rollback. It costs schema governance, duplicate-running during transition and a real operations owner for each service. We are choosing the cost deliberately.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--grey" id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">02 / Design decisions</p>
+          <h2 class="h2 mt-3">Five decisions shape the boundary.</h2>
+        </div>
+        <p class="lede">Each decision has a status and a consequence. If a decision changes, the consequence changes with it.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="table">
+          <caption>Architecture decision record, phase 2. Status as of 14 November 2026.</caption>
+          <thead><tr><th scope="col">Decision</th><th scope="col">Status</th><th scope="col">Consequence</th></tr></thead>
+          <tbody>
+            <tr><td class="strong">Keep policy administration as the system of record until phase 3</td><td><span class="tag tag--ok">Accepted</span></td><td>No dual-write. Read models are projected from events; policy truth stays in one place.</td></tr>
+            <tr><td class="strong">Use an event backbone rather than point-to-point integration</td><td><span class="tag tag--ok">Accepted</span></td><td>One contract, replay and audit. Requires schema ownership and versioning discipline.</td></tr>
+            <tr><td class="strong">Strangle intake first, not payments</td><td><span class="tag tag--ok">Accepted</span></td><td>Lower operational risk and faster learning. Payment migration moves to phase 3.</td></tr>
+            <tr><td class="strong">No shared database between services</td><td><span class="tag tag--ok">Accepted</span></td><td>Each service owns its store. Reporting consumes the event log, not production tables.</td></tr>
+            <tr><td class="strong">Defer correspondence migration</td><td><span class="tag tag--warn">Proposed</span></td><td>Templates stay in the monolith for phase 2. Revisit once the intake slice is stable.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white" id="evidence">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <p class="kicker">03 / What we are not doing</p>
+          <h2 class="h2 mt-3">A smaller target is easier to defend.</h2>
+          <p class="lede mt-4">Architecture documents usually fail by adding. This one is useful only if it rules things out.</p>
+          <ul class="checklist checklist--red mt-5">
+            <li><strong>Not a lift-and-shift.</strong> Moving the monolith to cloud infrastructure would keep the release coupling and add a migration bill.</li>
+            <li><strong>Not microservices everywhere.</strong> Four services are enough for the first slice. A service per module would multiply operational cost before the team is ready.</li>
+            <li><strong>Not a data lake.</strong> Reporting consumes the event log. A separate lake is a phase 3 decision, not a prerequisite.</li>
+            <li><strong>Not a dual-write.</strong> Two systems of record for policy would create a reconciliation problem the business cannot absorb.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="table-wrap">
+            <table class="table table--compact table--fit">
+              <caption>Architecture risks and mitigations.</caption>
+              <thead><tr><th scope="col">Risk</th><th scope="col">Sev.</th><th scope="col">Mitigation</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">Event schema drift</td><td><span class="status status--risk">High</span></td><td>Named schema owner; versioned contracts; consumer tests in CI</td></tr>
+                <tr><td class="strong">Dual-run cost</td><td><span class="status status--warn">Med</span></td><td>Time-boxed boundary; exit criteria agreed at week 8</td></tr>
+                <tr><td class="strong">Operations readiness</td><td><span class="status status--risk">High</span></td><td>Service owner named in week 1; runbook review before go-live</td></tr>
+                <tr><td class="strong">Vendor lock-in at the edge</td><td><span class="status status--warn">Med</span></td><td>Open contracts, portable identity, no proprietary event format</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--grey" id="next">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">04 / Cutover rules</p>
+          <h2 class="h2 mt-3">The boundary moves only when the evidence does.</h2>
+        </div>
+        <p class="lede">These rules apply to every slice, not just the first one. They are deliberately hard to waive.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step__num">01</div><h4>Name the owner</h4><p>No cutover without a service owner, a runbook and an escalation path that someone has walked.</p></div>
+        <div class="step"><div class="step__num">02</div><h4>Prove the fallback</h4><p>The monolith stays available until the slice has run live for four weeks and the rollback has been tested twice.</p></div>
+        <div class="step"><div class="step__num">03</div><h4>Move one number</h4><p>Each slice has one operating metric, a baseline and a review date. If the number does not move, the boundary does not move.</p></div>
+        <div class="step"><div class="step__num">04</div><h4>Retire the path</h4><p>Once the slice is stable, remove the old route. Leaving both paths alive is how a strangler becomes a permanent tax.</p></div>
+      </div>
+
+      <div class="callout callout--purple mt-7">
+        <h4>Decision requested</h4>
+        <p>Approve the target architecture direction and the phase 2 strangler boundary. The first slice remains intake. Payments and correspondence stay out of scope until the week 12 gate.</p>
+        <div class="actions mt-4 no-print">
+          <button class="btn btn--primary" type="button" data-copy="#arch-summary" data-copy-message="Architecture summary copied as Markdown">
+            <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy architecture summary
+          </button>
+          <button class="btn btn--ghost" type="button" data-print>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Print / PDF
+          </button>
+        </div>
+      </div>
+      <div id="arch-summary" class="sr-only">
+# Northline claims platform — architecture summary
+
+- **Pattern:** Strangler boundary around the claims monolith, with an event backbone for new services.
+- **Scope:** Intake service first. Policy administration remains the system of record until phase 3.
+- **Decisions:** No shared database; no dual-write; event contracts, not point-to-point calls.
+- **Cutover rules:** Named owner, tested fallback, one operating metric, old path retired.
+- **Out of scope:** Payments migration, correspondence migration, data lake.
+      </div>
+      <p class="scenario-note">Northline Group is an illustrative client scenario for this reference. The architecture is a teaching example, not a recommendation for a specific environment.</p>
+    </div>
+  </section>
+</main>
+
+<!-- @include _partials/footer.html -->
+<script src="../../../assets/sogeti.js"></script>
+</body>
+</html>

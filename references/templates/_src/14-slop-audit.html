@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The gate — 40 checks for AI-era UI — Sogeti</title>
+<meta name="description" content="A 40-item mechanical gate for AI slop in interface design, with tiered severity and an exportable audit record.">
+<link rel="stylesheet" href="../../../assets/sogeti.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- @include _partials/shapes.html -->
+<!-- @include _partials/header.html -->
+
+<main id="main">
+  <section class="page-head" id="context">
+    <div class="page-head__shape" aria-hidden="true"></div>
+    <span class="page-head__mark" aria-hidden="true">14</span>
+    <div class="wrap">
+      <p class="kicker">Quality gate / interface review</p>
+      <h1 class="display display--s">Would this page pass?</h1>
+      <p class="lede">A 40-item gate for AI-era UI. Tick what is present and unjustified. Tier 1 blocks. Tier 2 diagnoses. Tier 3 and 4 corroborate. The point is subtraction, not a higher score.</p>
+      <div class="page-head__meta">
+        <span>40 checks</span>
+        <span>4 tiers</span>
+        <span>About 5 minutes</span>
+        <span>No automated crawl</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white" id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">01 / The gate</p>
+          <h2 class="h2 mt-3">Count only what has no job.</h2>
+        </div>
+        <p class="lede">Every pattern here is legitimate somewhere. The defect is the missing job, the unchosen default and the density that follows. One hit is noise; a cluster is a signature.</p>
+      </div>
+
+      <div class="slop-layout">
+        <div>
+          <div class="slop-tier tier-1">
+            <div class="slop-tier__head"><h2>Tier 1 · Blockers</h2><span>Any hit = fail</span></div>
+            <label class="slop-item"><input type="checkbox" data-tier="1" data-label="Body contrast below 4.5:1"><span><b>Body contrast below 4.5:1, or large text below 3:1.</b> Measure against the real background, not the token.</span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="1" data-label="No visible focus state"><span><b>An interactive element with no visible focus state.</b> Keyboard is not an edge case.</span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="1" data-label="Content hidden at rest"><span><b>Content invisible at rest, waiting on a scroll handler.</b> If JS fails, the page should still communicate.</span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="1" data-label="Form cannot report validation"><span><b>A form that cannot report a validation error.</b> A silent failure is worse than a visible one.</span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="1" data-label="Horizontal overflow at 360px"><span><b>Horizontal overflow at 360px, or no mobile layout.</b> Test the narrowest real screen, not the design frame.</span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="1" data-label="Fabricated proof"><span><b>A statistic, logo, customer, badge or testimonial you cannot substantiate.</b> Fictional data must be labelled as such.</span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="1" data-label="Chart without axes or units"><span><b>A chart with no axis labels, units or stated baseline.</b> Unfalsifiable by construction.</span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="1" data-label="Missing alt text or broken image"><span><b>A broken image source, or missing alt on a meaningful image.</b> Decorative images get alt="".</span></label>
+          </div>
+
+          <div class="slop-tier tier-2">
+            <div class="slop-tier__head"><h2>Tier 2 · Identity tells</h2><span>3+ = diagnosis</span></div>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="System font default"><span><b>--font-sans is ui-sans-serif/system-ui, or a declared webfont has no file served.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Inter/Geist only"><span><b>Inter or Geist as the only family, with no second deliberate face.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Italic serif display"><span><b>Oversized italic serif headline, or a serif-italic accent word inside a sans headline.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Gradient text"><span><b>Gradient or clipped text on a heading or number.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Indigo/violet gradient"><span><b>Indigo or violet gradient anywhere, or emerald as the only accent.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Cream + amber default"><span><b>Cream ground plus amber accent with no editorial reason.</b> The 2026 replacement reflex.</span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Radial glow"><span><b>Radial glow behind a hero or section.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Glass with nothing behind"><span><b>Backdrop blur where nothing overlaps.</b> Glass solves layering, not texture.</span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Pill chip above H1"><span><b>A pill or chip directly above the H1.</b> Usually “New”, “v2.0” or a sparkle.</span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Uppercase tracked labels"><span><b>Uppercase with letter-spacing ≥ 0.1em on three or more unrelated labels.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Icon tile above every heading"><span><b>A rounded-square icon container above every feature heading.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Exactly three equal feature cards"><span><b>Exactly three equal cards, when the content does not naturally come in threes.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Bento tiles that don’t differ"><span><b>A bento grid where the tiles do not differ in kind.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Grayscale logo wall"><span><b>A grayscale logo wall.</b> Only substantiable logos; not decoration.</span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Counting stats on scroll"><span><b>A stats banner with three or more numbers counting up on scroll.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Fake browser chrome"><span><b>Fake browser chrome or a terminal as the hero.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="One radius everywhere"><span><b>One border radius on cards, inputs, buttons and images alike.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Border plus wide shadow"><span><b>Every card has both a hairline border and a wide shadow.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="2" data-label="Decorative accent stripe"><span><b>A decorative 3–4px coloured stripe on ordinary cards.</b> Keep stripes for real status.</span></label>
+          </div>
+
+          <div class="slop-tier tier-3">
+            <div class="slop-tier__head"><h2>Tier 3 · Craft</h2><span>Corroborating</span></div>
+            <label class="slop-item"><input type="checkbox" data-tier="3" data-label="Fade-up on every section"><span><b>Identical fade-up on every section, with uniform stagger.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="3" data-label="Hover-scale everywhere"><span><b>Hover-scale on non-actionable cards.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="3" data-label="Marquee without pause"><span><b>Auto-scrolling marquee without pause controls.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="3" data-label="Custom cursor"><span><b>Custom cursor or pointer follower.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="3" data-label="Parallax on multiple layers"><span><b>Parallax on more than one layer.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="3" data-label="Line length over 80ch or justified"><span><b>Body line length over 80 characters, or justified body text.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="3" data-label="Stock isometric tech art"><span><b>Stock isometric or hexagon tech art with no referent.</b> Brand-mandated isometric systems need a caption and a job.</span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="3" data-label="Dark mode as decoration"><span><b>Dark mode as decoration, with no designed light equivalent.</b></span></label>
+          </div>
+
+          <div class="slop-tier tier-4">
+            <div class="slop-tier__head"><h2>Tier 4 · Copy</h2><span>Rate-based</span></div>
+            <label class="slop-item"><input type="checkbox" data-tier="4" data-label="Weightless headline or buzzword layer"><span><b>The headline survives a competitor’s logo swap, or two or more of: elevate, seamlessly, unlock, empower, supercharge, world-class.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="4" data-label="In today’s fast-paced world"><span><b>“In today’s fast-paced world” or equivalent throat-clearing.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="4" data-label="Negative parallelism"><span><b>“It’s not just X, it’s Y” or “Not a feature. A platform.”</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="4" data-label="Spaced em dashes"><span><b>Spaced em dash three or more times in one screen of copy.</b></span></label>
+            <label class="slop-item"><input type="checkbox" data-tier="4" data-label="Claim with no mechanism"><span><b>A claim with no number, name, date or mechanism.</b></span></label>
+          </div>
+        </div>
+
+        <aside class="slop-result" aria-label="Audit result">
+          <p class="mono" style="font-size:.66rem;color:var(--blue)">Gate result</p>
+          <p class="verdict" id="verdict" data-state="pass">PASS</p>
+          <p class="slop-note" id="verdict-note">No hits. Still do the keyboard and 360px pass.</p>
+          <div class="count-grid">
+            <div><b id="c1">0</b><span>Tier 1 · blockers</span></div>
+            <div><b id="c2">0</b><span>Tier 2 · identity</span></div>
+            <div><b id="c3">0</b><span>Tier 3 · craft</span></div>
+            <div><b id="c4">0</b><span>Tier 4 · copy</span></div>
+          </div>
+          <div class="actions mt-4">
+            <button class="btn btn--primary btn--sm" type="button" data-copy="#audit-output" data-copy-message="Audit record copied as Markdown">
+              <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy audit
+            </button>
+            <button class="btn btn--ghost btn--sm" type="button" id="reset-audit">Reset</button>
+          </div>
+          <p class="xs muted mt-3">A hit means “present; confirm the job”, not “guilty”. Weight co-occurrence over count. Fix by subtraction, not by adding a gradient.</p>
+        </aside>
+      </div>
+
+      <div id="audit-output" class="sr-only" aria-live="polite"></div>
+
+      <div class="callout callout--warn mt-7">
+        <h4>False positives are the point</h4>
+        <p>Purple is a real brand colour. Dark mode with glow was hand-built by Linear. Three-card rows convert. Isometric illustration is mandated by some brands, including this one. The checklist goes stale; the mechanism does not. Ask what job the pattern is doing before you score it.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- @include _partials/footer.html -->
+<script src="../../../assets/sogeti.js"></script>
+<script>
+(function () {
+  var boxes = Array.prototype.slice.call(document.querySelectorAll("[data-tier]"));
+  var out = document.getElementById("audit-output");
+  var verdict = document.getElementById("verdict");
+  var note = document.getElementById("verdict-note");
+  var counts = { 1: document.getElementById("c1"), 2: document.getElementById("c2"), 3: document.getElementById("c3"), 4: document.getElementById("c4") };
+
+  function update() {
+    var n = { 1: 0, 2: 0, 3: 0, 4: 0 };
+    var hits = [];
+    boxes.forEach(function (b) {
+      if (!b.checked) return;
+      var t = Number(b.getAttribute("data-tier"));
+      n[t] += 1;
+      hits.push("T" + t + " — " + b.getAttribute("data-label"));
+    });
+    Object.keys(counts).forEach(function (k) { counts[k].textContent = n[k]; });
+
+    var state, message;
+    if (n[1] > 0) { state = "fail"; message = n[1] + " Tier 1 blocker(s). Do not ship until they are resolved."; }
+    else if (n[2] >= 3) { state = "fail"; message = n[2] + " identity tells. Rewrite the page, do not restyle it."; }
+    else if (n[2] === 2) { state = "review"; message = "Two identity tells. Review the page before shipping."; }
+    else { state = "pass"; message = "No blocking pattern. Still do the keyboard, 360px and evidence pass."; }
+    verdict.textContent = state.toUpperCase();
+    verdict.setAttribute("data-state", state);
+    note.textContent = message;
+
+    out.textContent = "# AI slop gate — audit record\n\n" +
+      "**Verdict:** " + state.toUpperCase() + "\n\n" +
+      "Tier 1: " + n[1] + " · Tier 2: " + n[2] + " · Tier 3: " + n[3] + " · Tier 4: " + n[4] + "\n\n" +
+      (hits.length ? "## Hits\n" + hits.map(function (h) { return "- " + h; }).join("\n") : "## Hits\n_None._") +
+      "\n\n_A hit means present, not proven. Confirm the job before changing the design._\n";
+  }
+  boxes.forEach(function (b) { b.addEventListener("change", update); });
+  var reset = document.getElementById("reset-audit");
+  if (reset) reset.addEventListener("click", function () { boxes.forEach(function (b) { b.checked = false; }); update(); });
+  update();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI delivery maturity assessment — Sogeti</title>
+<meta name="description" content="An eight-dimension diagnostic for AI delivery maturity, with a live profile and practical next actions.">
+<link rel="stylesheet" href="../../../assets/sogeti.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- @include _partials/shapes.html -->
+<!-- @include _partials/header.html -->
+
+<main id="main">
+  <section class="page-head" id="context">
+    <div class="page-head__shape" aria-hidden="true"></div>
+    <span class="page-head__mark" aria-hidden="true">06</span>
+    <div class="wrap">
+      <p class="kicker">Diagnostic / AI delivery maturity</p>
+      <h1 class="display display--s">Where does AI delivery actually stand?</h1>
+      <p class="lede">Eight dimensions, five levels. Score what you can evidence, not what you intend. The profile is a conversation starter, not a certification.</p>
+      <div class="page-head__meta">
+        <span>8 dimensions</span>
+        <span>5 levels</span>
+        <span>About 10 minutes</span>
+        <span>Nothing leaves this page</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white" id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">01 / Score the evidence</p>
+          <h2 class="h2 mt-3">Move each dimension to the level you can prove.</h2>
+        </div>
+        <p class="lede">Defaults are set to “piloting” as a starting point. Change them to match the strongest evidence you have, not the most optimistic story you have heard.</p>
+      </div>
+
+      <div class="assessment">
+        <div>
+          <div class="scale-legend" aria-hidden="true"><span>0 · Not started</span><span>1 · Exploring</span><span>2 · Piloting</span><span>3 · Scaling</span><span>4 · Embedded</span></div>
+          <div class="dimension">
+            <div class="dimension__head"><label for="d-strategy">Strategy and mandate</label><output for="d-strategy" id="o-strategy">2</output></div>
+            <p class="dimension__hint">A named executive owner, a funded portfolio and a decision on where AI should not be used.</p>
+            <input type="range" id="d-strategy" min="0" max="4" step="1" value="2" data-dim="Strategy" data-action="Name one accountable executive and publish a short stop-list of use cases you will not fund this year.">
+          </div>
+          <div class="dimension">
+            <div class="dimension__head"><label for="d-data">Data foundation</label><output for="d-data" id="o-data">2</output></div>
+            <p class="dimension__hint">Source ownership, data contracts, quality thresholds and a path to the data a model actually needs.</p>
+            <input type="range" id="d-data" min="0" max="4" step="1" value="2" data-dim="Data" data-action="Pick the one input that can stop the next service and assign a named owner on the source system.">
+          </div>
+          <div class="dimension">
+            <div class="dimension__head"><label for="d-lifecycle">Model lifecycle</label><output for="d-lifecycle" id="o-lifecycle">2</output></div>
+            <p class="dimension__hint">Evaluation, versioning, monitoring and a defined answer to model drift or degraded confidence.</p>
+            <input type="range" id="d-lifecycle" min="0" max="4" step="1" value="2" data-dim="Model lifecycle" data-action="Write the drift response before the next release: who is alerted, who decides, what the fallback is.">
+          </div>
+          <div class="dimension">
+            <div class="dimension__head"><label for="d-engineering">Engineering and MLOps</label><output for="d-engineering" id="o-engineering">2</output></div>
+            <p class="dimension__hint">Reproducible pipelines, environment parity, release automation and rollback you have actually tested.</p>
+            <input type="range" id="d-engineering" min="0" max="4" step="1" value="2" data-dim="Engineering" data-action="Rehearse a rollback with live-like traffic and record the time to recover, not the intention to recover.">
+          </div>
+          <div class="dimension">
+            <div class="dimension__head"><label for="d-risk">Risk and governance</label><output for="d-risk" id="o-risk">2</output></div>
+            <p class="dimension__hint">Runtime controls, human review, auditability and a risk owner who can stop the service.</p>
+            <input type="range" id="d-risk" min="0" max="4" step="1" value="2" data-dim="Risk" data-action="Give one risk owner the authority to switch the service off, and test that switch this quarter.">
+          </div>
+          <div class="dimension">
+            <div class="dimension__head"><label for="d-operating">Operating model</label><output for="d-operating" id="o-operating">2</output></div>
+            <p class="dimension__hint">A service owner, a support path, capacity for exceptions and a team that stays after go-live.</p>
+            <input type="range" id="d-operating" min="0" max="4" step="1" value="2" data-dim="Operating model" data-action="Put the service in the catalog with an owner, a budget line and an escalation path before the next go-live.">
+          </div>
+          <div class="dimension">
+            <div class="dimension__head"><label for="d-talent">Talent and skills</label><output for="d-talent" id="o-talent">2</output></div>
+            <p class="dimension__hint">Capability in the line, not only in a central team. Coaching at the point of work.</p>
+            <input type="range" id="d-talent" min="0" max="4" step="1" value="2" data-dim="Talent" data-action="Embed a coach in the first four weeks of live operation and measure time-to-confidence.">
+          </div>
+          <div class="dimension">
+            <div class="dimension__head"><label for="d-value">Value measurement</label><output for="d-value" id="o-value">2</output></div>
+            <p class="dimension__hint">A baseline, an operating metric and a review date. Not a model accuracy score alone.</p>
+            <input type="range" id="d-value" min="0" max="4" step="1" value="2" data-dim="Value" data-action="Replace one accuracy target with an operating metric, a baseline and a named reviewer.">
+          </div>
+        </div>
+
+        <aside class="radar-card" aria-label="Live maturity profile">
+          <div class="radar-card__head"><span class="mono">Current profile</span><span class="mono" id="profile-label">Piloting</span></div>
+          <div class="score-big" id="score">50</div>
+          <span class="tag tag--warn score-band" id="band">Developing</span>
+          <svg class="radar-svg" viewBox="0 0 440 440" role="img" aria-labelledby="radar-title radar-desc">
+            <title id="radar-title">AI delivery maturity radar chart</title>
+            <desc id="radar-desc">Eight-axis radar chart showing the current score for strategy, data, model lifecycle, engineering, risk, operating model, talent and value.</desc>
+            <g id="radar-rings"></g>
+            <g id="radar-axes"></g>
+            <polygon class="radar-poly" id="radar-poly" points=""></polygon>
+            <g id="radar-dots"></g>
+            <g id="radar-labels"></g>
+          </svg>
+          <p class="xs muted" style="text-align:center">Outer ring = level 4. Centre = level 0.</p>
+          <div class="actions mt-4">
+            <button class="btn btn--primary btn--sm" type="button" data-copy="#assessment-output" data-copy-message="Assessment copied as Markdown">
+              <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy assessment
+            </button>
+            <button class="btn btn--ghost btn--sm" type="button" id="reset-assessment">Reset</button>
+          </div>
+          <p class="xs muted mt-3">Scores stay in this page. Use “Print / PDF” to keep a copy.</p>
+        </aside>
+      </div>
+
+      <details class="disclosure mt-6">
+        <summary>View the scores as a table</summary>
+        <div class="disclosure__body">
+          <div class="table-wrap">
+            <table class="table table--compact table--fit">
+              <caption>Current maturity scores by dimension.</caption>
+              <thead><tr><th scope="col">Dimension</th><th scope="col" class="n">Score</th><th scope="col">Level</th></tr></thead>
+              <tbody id="score-table"></tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+      <div id="assessment-output" class="sr-only" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="section section--grey" id="evidence">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">02 / What the profile says</p>
+          <h2 class="h2 mt-3">Three moves, in order.</h2>
+        </div>
+        <p class="lede">The recommendation engine is deliberately simple: the lowest scores first, because that is where the next service will fail.</p>
+      </div>
+      <ol class="recommendation-list" id="recommendations"></ol>
+      <div class="callout callout--purple mt-6">
+        <h4>How to use this in a real conversation</h4>
+        <p>Ask each owner for the evidence behind their score. A “3” with no named owner, tested rollback or operating metric is a “2” with better slides. The gap between the score and the evidence is the work.</p>
+      </div>
+      <div class="actions mt-5 no-print">
+        <button class="btn btn--primary" type="button" data-copy="#assessment-output" data-copy-message="Assessment copied as Markdown">
+          <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy assessment
+        </button>
+        <button class="btn btn--ghost" type="button" data-print>
+          <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Print / PDF
+        </button>
+      </div>
+      <p class="scenario-note">This diagnostic is a discussion tool, not an audit or certification. Scores reflect the evidence available on the day. Do not use it to rank teams or individuals.</p>
+    </div>
+  </section>
+</main>
+
+<!-- @include _partials/footer.html -->
+<script src="../../../assets/sogeti.js"></script>
+<script>
+(function () {
+  var inputs = Array.prototype.slice.call(document.querySelectorAll("[data-dim]"));
+  var labels = ["Strategy", "Data", "Lifecycle", "Engineering", "Risk", "Operating model", "Talent", "Value"];
+  var short = ["Strategy", "Data", "Lifecycle", "Engineering", "Risk", "Operating", "Talent", "Value"];
+  var levels = ["Not started", "Exploring", "Piloting", "Scaling", "Embedded"];
+  var center = 220, maxR = 140, minR = 22;
+  var poly = document.getElementById("radar-poly");
+  var dots = document.getElementById("radar-dots");
+  var labelGroup = document.getElementById("radar-labels");
+  var rings = document.getElementById("radar-rings");
+  var axes = document.getElementById("radar-axes");
+  var scoreEl = document.getElementById("score");
+  var bandEl = document.getElementById("band");
+  var profileEl = document.getElementById("profile-label");
+  var recList = document.getElementById("recommendations");
+  var table = document.getElementById("score-table");
+  var output = document.getElementById("assessment-output");
+
+  function angle(i) { return (-90 + i * 45) * Math.PI / 180; }
+  function point(i, v) {
+    var r = minR + (v / 4) * (maxR - minR);
+    return [center + Math.cos(angle(i)) * r, center + Math.sin(angle(i)) * r];
+  }
+  // static rings and axes
+  [0.25, 0.5, 0.75, 1].forEach(function (f) {
+    var pts = [];
+    for (var i = 0; i < 8; i++) {
+      var r = minR + f * (maxR - minR);
+      pts.push((center + Math.cos(angle(i)) * r).toFixed(1) + "," + (center + Math.sin(angle(i)) * r).toFixed(1));
+    }
+    rings.insertAdjacentHTML("beforeend", '<polygon class="radar-grid" points="' + pts.join(" ") + '"/>');
+  });
+  for (var i = 0; i < 8; i++) {
+    var p = point(i, 4);
+    axes.insertAdjacentHTML("beforeend", '<line class="radar-axis" x1="' + center + '" y1="' + center + '" x2="' + p[0].toFixed(1) + '" y2="' + p[1].toFixed(1) + '"/>');
+  }
+  for (var j = 0; j < 8; j++) {
+    var a = angle(j);
+    var x = center + Math.cos(a) * 165, y = center + Math.sin(a) * 165 + 3;
+    var anchor = Math.cos(a) > 0.3 ? "start" : Math.cos(a) < -0.3 ? "end" : "middle";
+    labelGroup.insertAdjacentHTML("beforeend", '<text class="radar-label" x="' + x + '" y="' + y + '" text-anchor="' + anchor + '">' + short[j] + '</text>');
+  }
+
+  function bandFor(score) {
+    if (score < 30) return ["Emerging", "tag--red"];
+    if (score < 60) return ["Developing", "tag--warn"];
+    if (score < 85) return ["Established", "tag--ok"];
+    return ["Leading", "tag--ok"];
+  }
+
+  function update() {
+    var values = inputs.map(function (x) { return Number(x.value); });
+    var avg = values.reduce(function (a, b) { return a + b; }, 0) / values.length;
+    var score = Math.round(avg / 4 * 100);
+    var b = bandFor(score);
+    scoreEl.textContent = score;
+    bandEl.textContent = b[0];
+    bandEl.className = "tag score-band " + b[1];
+    profileEl.textContent = levels[Math.round(avg)];
+
+    var pts = values.map(function (v, i) { var p = point(i, v); return p[0].toFixed(1) + "," + p[1].toFixed(1); });
+    poly.setAttribute("points", pts.join(" "));
+    dots.innerHTML = values.map(function (v, i) {
+      var p = point(i, v);
+      return '<circle class="radar-dot" cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="3.5"/>';
+    }).join("");
+
+    table.innerHTML = inputs.map(function (x, i) {
+      return "<tr><td>" + labels[i] + "</td><td class='n'>" + values[i] + "</td><td>" + levels[values[i]] + "</td></tr>";
+    }).join("");
+
+    var sorted = inputs.map(function (x, i) { return { i: i, v: Number(x.value), label: labels[i], action: x.getAttribute("data-action") }; })
+      .sort(function (a, b) { return a.v - b.v; }).slice(0, 3);
+    recList.innerHTML = sorted.map(function (r) {
+      return "<li><b>" + r.label + " · level " + r.v + "</b><span>" + r.action + "</span></li>";
+    }).join("");
+
+    var md = "# AI delivery maturity assessment\n\n" +
+      "- Overall score: **" + score + "/100** (" + b[0] + ")\n" +
+      "- Dimensions: " + inputs.map(function (x, i) { return labels[i] + " " + values[i] + "/4"; }).join("; ") + "\n\n" +
+      "## Next three moves\n" + sorted.map(function (r) { return "- **" + r.label + ":** " + r.action; }).join("\n") +
+      "\n\n_Generated from a self-assessment. Evidence not verified._\n";
+    output.textContent = md;
+    inputs.forEach(function (x, i) {
+      var o = document.getElementById("o-" + x.id.replace("d-", ""));
+      if (o) o.textContent = values[i];
+    });
+  }
+
+  inputs.forEach(function (x) { x.addEventListener("input", update); });
+  var reset = document.getElementById("reset-assessment");
+  if (reset) reset.addEventListener("click", function () {
+    inputs.forEach(function (x) { x.value = 2; });
+    update();
+  });
+  update();
+})();
+</script>
+</body>
+</html>

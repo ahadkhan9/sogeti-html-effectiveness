@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northline claims triage — options appraisal</title>
+<meta name="description" content="A weighted appraisal of build, buy and partner options for Northline claims triage, with adjustable criteria and live scoring.">
+<link rel="stylesheet" href="../../../assets/sogeti.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- @include _partials/shapes.html -->
+<!-- @include _partials/header.html -->
+
+<main id="main">
+  <section class="page-head" id="context">
+    <div class="page-head__shape" aria-hidden="true"></div>
+    <span class="page-head__mark" aria-hidden="true">07</span>
+    <div class="wrap">
+      <p class="kicker">Options appraisal / Northline claims triage</p>
+      <h1 class="display display--s">Buy, build or partner? The answer depends on what you weight.</h1>
+      <p class="lede">Three credible options, six criteria. Adjust the weights, challenge the scores, and watch the recommendation move. The model is a thinking aid, not a decision.</p>
+      <div class="page-head__meta">
+        <span>3 options</span>
+        <span>6 criteria</span>
+        <span>Illustrative scores</span>
+        <time datetime="2026-11-14">14 November 2026</time>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white" id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">01 / The matrix</p>
+          <h2 class="h2 mt-3">The weighting is the argument.</h2>
+        </div>
+        <p class="lede">Change a weight and the ranking changes. That is the point: the conversation should be about the weights, not the score.</p>
+      </div>
+
+      <div class="appraisal">
+        <div>
+          <div class="preset-row no-print" aria-label="Weight profiles">
+            <button type="button" data-preset="balanced" data-weights="4,3,4,3,4,3" aria-pressed="true">Balanced</button>
+            <button type="button" data-preset="speed" data-weights="5,2,3,2,3,2" aria-pressed="false">Speed first</button>
+            <button type="button" data-preset="cost" data-weights="2,5,2,3,3,2" aria-pressed="false">Cost first</button>
+            <button type="button" data-preset="control" data-weights="3,2,5,5,2,4" aria-pressed="false">Control first</button>
+          </div>
+          <div class="table-wrap">
+            <table class="matrix-table">
+              <caption>Weight each criterion from 1 to 5. Score each option from 1 to 5, where 5 is strongest. Scores are illustrative and must be replaced with evidence.</caption>
+              <thead>
+                <tr><th scope="col">Criterion</th><th scope="col">Weight</th><th scope="col">Build in-house</th><th scope="col">Buy a platform</th><th scope="col">Partner with Sogeti</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="crit"><b>Time to value</b><span>Weeks to a live slice, not a contract signature.</span></td>
+                  <td><div class="weight"><label class="sr-only" for="w-speed">Weight for time to value</label><input id="w-speed" type="range" min="1" max="5" step="1" value="4" data-weight="speed"><output for="w-speed">4</output></div></td>
+                  <td><select data-score data-option="build" data-criterion="speed" aria-label="Build in-house score for time to value"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select></td>
+                  <td><select data-score data-option="buy" data-criterion="speed" aria-label="Buy a platform score for time to value"><option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option></select></td>
+                  <td><select data-score data-option="partner" data-criterion="speed" aria-label="Partner with Sogeti score for time to value"><option>1</option><option>2</option><option>3</option><option>4</option><option selected>5</option></select></td>
+                </tr>
+                <tr>
+                  <td class="crit"><b>Cost to change</b><span>Total cost over three years, including exit.</span></td>
+                  <td><div class="weight"><label class="sr-only" for="w-cost">Weight for cost to change</label><input id="w-cost" type="range" min="1" max="5" step="1" value="3" data-weight="cost"><output for="w-cost">3</output></div></td>
+                  <td><select data-score data-option="build" data-criterion="cost" aria-label="Build in-house score for cost to change"><option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option></select></td>
+                  <td><select data-score data-option="buy" data-criterion="cost" aria-label="Buy a platform score for cost to change"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select></td>
+                  <td><select data-score data-option="partner" data-criterion="cost" aria-label="Partner with Sogeti score for cost to change"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select></td>
+                </tr>
+                <tr>
+                  <td class="crit"><b>Control</b><span>Ownership of the roadmap, data and model.</span></td>
+                  <td><div class="weight"><label class="sr-only" for="w-control">Weight for control</label><input id="w-control" type="range" min="1" max="5" step="1" value="4" data-weight="control"><output for="w-control">4</output></div></td>
+                  <td><select data-score data-option="build" data-criterion="control" aria-label="Build in-house score for control"><option>1</option><option>2</option><option>3</option><option>4</option><option selected>5</option></select></td>
+                  <td><select data-score data-option="buy" data-criterion="control" aria-label="Buy a platform score for control"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select></td>
+                  <td><select data-score data-option="partner" data-criterion="control" aria-label="Partner with Sogeti score for control"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select></td>
+                </tr>
+                <tr>
+                  <td class="crit"><b>Flexibility</b><span>Ability to change course without a re-platform.</span></td>
+                  <td><div class="weight"><label class="sr-only" for="w-flex">Weight for flexibility</label><input id="w-flex" type="range" min="1" max="5" step="1" value="3" data-weight="flex"><output for="w-flex">3</output></div></td>
+                  <td><select data-score data-option="build" data-criterion="flex" aria-label="Build in-house score for flexibility"><option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option></select></td>
+                  <td><select data-score data-option="buy" data-criterion="flex" aria-label="Buy a platform score for flexibility"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option></select></td>
+                  <td><select data-score data-option="partner" data-criterion="flex" aria-label="Partner with Sogeti score for flexibility"><option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option></select></td>
+                </tr>
+                <tr>
+                  <td class="crit"><b>Delivery confidence</b><span>Evidence that this option can ship and be run.</span></td>
+                  <td><div class="weight"><label class="sr-only" for="w-confidence">Weight for delivery confidence</label><input id="w-confidence" type="range" min="1" max="5" step="1" value="4" data-weight="confidence"><output for="w-confidence">4</output></div></td>
+                  <td><select data-score data-option="build" data-criterion="confidence" aria-label="Build in-house score for delivery confidence"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select></td>
+                  <td><select data-score data-option="buy" data-criterion="confidence" aria-label="Buy a platform score for delivery confidence"><option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option></select></td>
+                  <td><select data-score data-option="partner" data-criterion="confidence" aria-label="Partner with Sogeti score for delivery confidence"><option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option></select></td>
+                </tr>
+                <tr>
+                  <td class="crit"><b>Capability</b><span>Access to scarce skills without a permanent hire.</span></td>
+                  <td><div class="weight"><label class="sr-only" for="w-capability">Weight for capability</label><input id="w-capability" type="range" min="1" max="5" step="1" value="3" data-weight="capability"><output for="w-capability">3</output></div></td>
+                  <td><select data-score data-option="build" data-criterion="capability" aria-label="Build in-house score for capability"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option></select></td>
+                  <td><select data-score data-option="buy" data-criterion="capability" aria-label="Buy a platform score for capability"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select></td>
+                  <td><select data-score data-option="partner" data-criterion="capability" aria-label="Partner with Sogeti score for capability"><option>1</option><option>2</option><option>3</option><option>4</option><option selected>5</option></select></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <aside class="results-panel" aria-label="Weighted results">
+          <div class="results-panel__head"><span class="mono" style="font-size:.66rem;color:var(--blue)">Weighted score / 100</span><span class="tag tag--outline" id="profile-name">Balanced</span></div>
+          <div id="result-rows">
+            <div class="result-row" data-result="build"><span class="result-rank">3</span><div><div class="result-name">Build in-house</div><div class="result-bar"><i style="width:0%"></i></div></div><span class="result-score">0</span></div>
+            <div class="result-row" data-result="buy"><span class="result-rank">2</span><div><div class="result-name">Buy a platform</div><div class="result-bar"><i style="width:0%"></i></div></div><span class="result-score">0</span></div>
+            <div class="result-row" data-result="partner"><span class="result-rank">1</span><div><div class="result-name">Partner with Sogeti</div><div class="result-bar"><i style="width:0%"></i></div></div><span class="result-score">0</span></div>
+          </div>
+          <div class="callout callout--purple mt-4" id="recommendation-box">
+            <h4 id="recommendation">Calculating</h4>
+            <p id="recommendation-note">Adjust the weights to see how the recommendation changes.</p>
+          </div>
+          <button class="btn btn--primary btn--sm mt-4" type="button" data-copy="#appraisal-output" data-copy-message="Appraisal copied as Markdown">
+            <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy appraisal
+          </button>
+        </aside>
+      </div>
+
+      <div class="callout callout--warn mt-6">
+        <h4>The model is not the decision</h4>
+        <p>A weighted matrix makes assumptions explicit. It does not validate them. Before the decision, test the two highest-weighted criteria against evidence: a reference client, a costed plan or a live proof. If you cannot, the score is a preference.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--grey" id="evidence">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">02 / What the model does not capture</p>
+          <h2 class="h2 mt-3">Three things a score cannot tell you.</h2>
+        </div>
+        <p class="lede">The matrix is useful because it is narrow. These are the questions it deliberately leaves outside.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card card--rule">
+          <p class="card__meta">01</p>
+          <h3 class="h4">Reversibility</h3>
+          <p class="small mt-2">A slightly lower score with a clean exit is often better than a higher score that locks you in. Ask what it costs to stop.</p>
+        </div>
+        <div class="card card--rule">
+          <p class="card__meta">02</p>
+          <h3 class="h4">Organizational fit</h3>
+          <p class="small mt-2">The best option on paper can fail on a governance model that cannot staff it. Weight the operating model, not just the build.</p>
+        </div>
+        <div class="card card--rule">
+          <p class="card__meta">03</p>
+          <h3 class="h4">The cost of waiting</h3>
+          <p class="small mt-2">Every option has a clock. A decision delayed by a quarter is a fourth option with its own cost and risk.</p>
+        </div>
+      </div>
+      <div id="appraisal-output" class="sr-only" aria-live="polite"></div>
+      <p class="scenario-note">Northline Group is an illustrative client scenario. Scores and weights are a teaching example, not a recommendation. Replace them with evidence before a real decision.</p>
+    </div>
+  </section>
+
+  <section class="section section--white" id="next">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <p class="kicker">03 / Decision</p>
+          <h2 class="h2 mt-3">Choose the option, then choose the evidence.</h2>
+          <p class="lede mt-4">The recommendation is only as good as the next test. We propose a two-week evidence sprint on the leading option before any commitment.</p>
+          <div class="actions mt-5 no-print">
+            <button class="btn btn--primary" type="button" data-copy="#appraisal-output" data-copy-message="Appraisal copied as Markdown">
+              <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy appraisal
+            </button>
+            <button class="btn btn--ghost" type="button" data-print>
+              <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Print / PDF
+            </button>
+          </div>
+        </div>
+        <div class="signoff">
+          <p class="mono" style="font-size:.7rem;color:var(--blue)">Decision record</p>
+          <div class="field mt-4"><label for="decision-option">Option selected</label><select id="decision-option"><option>Build in-house</option><option>Buy a platform</option><option selected>Partner with Sogeti</option><option>Defer</option></select></div>
+          <div class="field mt-4"><label for="decision-evidence">Evidence required before commitment</label><textarea id="decision-evidence" rows="2">Reference client, costed plan and a live proof on one product line.</textarea></div>
+          <div class="signoff__row"><div><div class="signoff__line"></div><label>Decision owner</label></div><div><div class="signoff__line"></div><label>Date</label></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- @include _partials/footer.html -->
+<script src="../../../assets/sogeti.js"></script>
+<script>
+(function () {
+  var weights = Array.prototype.slice.call(document.querySelectorAll("[data-weight]"));
+  var scores = Array.prototype.slice.call(document.querySelectorAll("[data-score]"));
+  var presets = Array.prototype.slice.call(document.querySelectorAll("[data-preset]"));
+  var options = ["build", "buy", "partner"];
+  var names = { build: "Build in-house", buy: "Buy a platform", partner: "Partner with Sogeti" };
+  var output = document.getElementById("appraisal-output");
+  var rec = document.getElementById("recommendation");
+  var recNote = document.getElementById("recommendation-note");
+  var profileName = document.getElementById("profile-name");
+
+  function valueOf(el) { return Number(el.value); }
+
+  function update() {
+    var w = {};
+    weights.forEach(function (x) { w[x.getAttribute("data-weight")] = valueOf(x); });
+    var max = Object.keys(w).reduce(function (a, k) { return a + w[k]; }, 0) * 5;
+    var totals = { build: 0, buy: 0, partner: 0 };
+    scores.forEach(function (s) {
+      totals[s.getAttribute("data-option")] += valueOf(s) * w[s.getAttribute("data-criterion")];
+    });
+    var pct = {};
+    options.forEach(function (o) { pct[o] = Math.round(totals[o] / max * 100); });
+    var ranked = options.slice().sort(function (a, b) { return pct[b] - pct[a]; });
+
+    options.forEach(function (o) {
+      var row = document.querySelector('[data-result="' + o + '"]');
+      row.querySelector(".result-score").textContent = pct[o];
+      row.querySelector(".result-bar i").style.width = pct[o] + "%";
+      row.querySelector(".result-rank").textContent = ranked.indexOf(o) + 1;
+      row.classList.toggle("is-first", ranked[0] === o);
+    });
+
+    var top = ranked[0], second = ranked[1];
+    var margin = pct[top] - pct[second];
+    rec.textContent = margin < 4 ? "Too close to call" : names[top] + " leads";
+    if (margin < 4) {
+      recNote.textContent = "The top two options are within " + margin + " points. Resolve the highest-weighted criterion with evidence before choosing.";
+    } else {
+      recNote.textContent = names[top] + " leads by " + margin + " points. The next test should target the criterion where the gap is widest.";
+    }
+
+    // Criterion with the largest weighted gap between top and second.
+    var best = null;
+    scores.forEach(function (s) {
+      if (s.getAttribute("data-option") !== top) return;
+      var other = document.querySelector('[data-score][data-option="' + second + '"][data-criterion="' + s.getAttribute("data-criterion") + '"]');
+      if (!other) return;
+      var gap = (valueOf(s) - valueOf(other)) * w[s.getAttribute("data-criterion")];
+      if (!best || gap > best.gap) best = { gap: gap, criterion: s.getAttribute("data-criterion") };
+    });
+    var critName = { speed: "time to value", cost: "cost to change", control: "control", flex: "flexibility", confidence: "delivery confidence", capability: "capability" };
+    if (best && best.gap > 0 && margin >= 4) recNote.textContent += " The largest weighted difference is " + critName[best.criterion] + ".";
+
+    output.textContent = "# Northline claims triage — options appraisal\n\n" +
+      "| Option | Weighted score / 100 |\n|---|---|\n" +
+      options.map(function (o) { return "| " + names[o] + " | " + pct[o] + " |"; }).join("\n") +
+      "\n\n**Leading option:** " + names[top] + " (" + pct[top] + "), margin " + margin + " points.\n" +
+      "**Weights:** " + weights.map(function (x) { return x.getAttribute("data-weight") + " " + valueOf(x); }).join(", ") + ".\n" +
+      "**Next test:** evidence on " + (best ? critName[best.criterion] : "the highest-weighted criterion") + ".\n" +
+      "\n_Illustrative scores. Not a recommendation until the evidence is verified._\n";
+  }
+
+  weights.forEach(function (x) {
+    x.addEventListener("input", function () {
+      var out = document.querySelector('output[for="' + x.id + '"]');
+      if (out) out.textContent = x.value;
+      presets.forEach(function (p) { p.setAttribute("aria-pressed", "false"); });
+      profileName.textContent = "Custom";
+      update();
+    });
+  });
+  scores.forEach(function (s) { s.addEventListener("change", update); });
+  presets.forEach(function (p) {
+    p.addEventListener("click", function () {
+      var values = p.getAttribute("data-weights").split(",").map(Number);
+      weights.forEach(function (x, i) { x.value = values[i]; var out = document.querySelector('output[for="' + x.id + '"]'); if (out) out.textContent = values[i]; });
+      presets.forEach(function (x) { x.setAttribute("aria-pressed", x === p ? "true" : "false"); });
+      profileName.textContent = p.textContent;
+      update();
+    });
+  });
+  update();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northline claims intake — client story — Sogeti</title>
+<meta name="description" content="How a 90-day discovery became a live claims intake service, and why the handover mattered more than the model.">
+<link rel="stylesheet" href="../../../assets/sogeti.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- @include _partials/shapes.html -->
+<!-- @include _partials/header.html -->
+
+<main id="main">
+  <section class="case-hero" id="context">
+    <div class="case-hero__shape" aria-hidden="true"></div>
+    <div class="wrap case-hero__inner intro">
+      <div>
+        <p class="kicker">Client story / Northline Group</p>
+        <h1 class="display">From nine days to three. Without stopping the book.</h1>
+        <p class="lede">A 90-day discovery became a live claims intake service. The technology was the easy part. The handover was the work.</p>
+        <div class="hero__meta">
+          <span>Insurance</span>
+          <span>Claims operations</span>
+          <time datetime="2026-11-14">November 2026</time>
+          <span>4 min read</span>
+        </div>
+      </div>
+      <div class="case-hero__stat">
+        <div class="stat">
+          <div class="stat__value">9 → 3</div>
+          <p class="stat__label">Days to complete intake</p>
+          <p class="stat__note">Client-reported median, first slice, weeks 9–12</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight section--white">
+    <div class="wrap">
+      <div class="hero-stats">
+        <div class="stat"><div class="stat__value">70%</div><p class="stat__label">Straight-through intake</p><p class="stat__note">Up from 41% at baseline</p></div>
+        <div class="stat stat--vibrant"><div class="stat__value">5</div><p class="stat__label">Manual touches per claim</p><p class="stat__note">Down from 14</p></div>
+        <div class="stat stat--red"><div class="stat__value">€24</div><p class="stat__label">Cost per claim</p><p class="stat__note">Down from €38, operations cost pool</p></div>
+      </div>
+      <p class="source mt-4">Client-reported outcomes for the first live slice. This is an illustrative scenario; replace with approved, verified client data before publication.</p>
+    </div>
+  </section>
+
+  <section class="section section--grey" id="approach">
+    <div class="wrap article-layout">
+      <aside class="toc no-print" aria-label="In this story">
+        <p class="toc__title">In this story</p>
+        <ol>
+          <li><a href="#challenge"><span>01</span>The challenge</a></li>
+          <li><a href="#approach-detail"><span>02</span>The approach</a></li>
+          <li><a href="#outcomes"><span>03</span>The outcomes</a></li>
+          <li><a href="#differently"><span>04</span>What we would do differently</a></li>
+        </ol>
+        <button class="btn btn--ghost btn--sm" type="button" data-copy="#case-summary" data-copy-message="Client story summary copied as Markdown">
+          <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy summary
+        </button>
+      </aside>
+
+      <article class="article-body">
+        <div id="case-summary" class="sr-only">
+# From nine days to three. Without stopping the book.
+
+Northline Group, claims intake. A 90-day discovery that became a live service.
+
+- **Challenge:** Nine-day intake, 14 manual touches, batch-bound platform.
+- **Approach:** Strangle one slice, name a service owner, prove live for four weeks.
+- **Outcomes:** 9→3 days, 41%→70% straight-through, 14→5 touches, €38→€24 per claim.
+- **Lesson:** The model did not change the queue. The owner did.
+        </div>
+
+        <h2 id="challenge">01. The challenge</h2>
+        <p>Northline’s claims intake was not broken in the way the dashboard suggested. Claims were not lost. Customers were not ignored. The service was simply slow in a way that had become normal: nine days from first notice to a complete file, fourteen handoffs and a nightly batch that set the rhythm for everyone.</p>
+        <p>The initial ask was familiar: “Can AI triage the claims?” The honest answer was yes, but triage would not fix a nine-day queue on its own. The constraint was the handoff between intake, assessment and payment. A model could classify a document; it could not own the exception.</p>
+        <div class="callout callout--warn">
+          <h4>The brief changed in week one</h4>
+          <p>We reframed the engagement from “build a triage model” to “move one intake slice, with its owner and its queue.” The model became one component of the service, not the point of it.</p>
+        </div>
+
+        <h2 id="approach-detail">02. The approach</h2>
+        <p>We protected the current book, isolated first-notice-of-loss intake for one product line, and put it behind an event contract. The monolith stayed the system of record. The slice ran live for four weeks with a named operations owner, a tested rollback and a weekly service review.</p>
+        <p>The team was deliberately small: a solution lead, two engineers, a business analyst, an operations owner and a part-time risk partner. The steering group met three times. Most decisions were made in the daily stand-up, not in a committee.</p>
+
+        <figure class="article-figure">
+          <div class="article-figure__art">
+            <img src="../../../assets/illustrations/handover.svg" width="640" height="420" alt="Isometric diagram of a handover gap between a build team stack and an operations platform, with a broken path marked by a red cross.">
+          </div>
+          <div class="annotation-grid">
+            <div><b>Build team</b>Model, evaluation, release.</div>
+            <div><b>The gap</b>A queue with no named owner.</div>
+            <div><b>Line team</b>Decision, exception, outcome.</div>
+          </div>
+          <figcaption><b>Figure 1 — The handover, before and after.</b> The first version of the service moved the model. The second version moved the queue.</figcaption>
+        </figure>
+
+        <h2 id="outcomes">03. The outcomes</h2>
+        <p>At the week 12 gate, the first slice had processed live claims for four weeks. The numbers below are client-reported and cover that slice only. They are not a forecast for the whole claims function.</p>
+
+        <div class="table-wrap">
+          <table class="table">
+            <caption>Before and after, first live slice. Client-reported; illustrative scenario.</caption>
+            <thead><tr><th scope="col">Measure</th><th scope="col" class="n">Before</th><th scope="col" class="n">After</th><th scope="col">Evidence</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Intake cycle time</td><td class="n">9 days</td><td class="n">3 days</td><td>Median first notice to complete file</td></tr>
+              <tr><td class="strong">Manual touches</td><td class="n">14</td><td class="n">5</td><td>Documented handoffs in the live slice</td></tr>
+              <tr><td class="strong">Straight-through intake</td><td class="n">41%</td><td class="n">70%</td><td>Claims accepted without re-keying</td></tr>
+              <tr><td class="strong">Cost per claim</td><td class="n">€38</td><td class="n">€24</td><td>Operations cost pool divided by claims processed</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <blockquote class="quote">
+          <blockquote>The model did not change the queue. The owner did. Once someone owned the exception, the technology had somewhere to land.</blockquote>
+          <figcaption><b>Operations director, Northline Group</b>Composite quote for layout reference. Replace with an approved client quote before publication.</figcaption>
+        </blockquote>
+
+        <h2 id="differently">04. What we would do differently</h2>
+        <ul>
+          <li><strong>Fund the exception queue on day one.</strong> We waited until week 5 to add analyst capacity. The queue was the binding constraint from the first live case.</li>
+          <li><strong>Bring risk into the rollback rehearsal earlier.</strong> The second rehearsal convinced risk. The first would have saved two weeks of questions.</li>
+          <li><strong>Retire the old path sooner.</strong> The dual-run period lasted three weeks longer than planned. Keeping both paths alive is a quiet tax on the team.</li>
+        </ul>
+
+        <div class="end-cta">
+          <p class="kicker">Next conversation</p>
+          <h3 class="h3 mt-3">Bring us the handover, not the model.</h3>
+          <p class="mt-3 ink-2 measure">We will map one live use case from input to decision, name the missing transfers and leave you with a one-page plan for the next go-live.</p>
+          <div class="actions mt-5">
+            <a class="btn btn--primary" href="https://www.sogeti.com/contact-us/" target="_blank" rel="noopener">Talk to the claims team
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <button class="btn btn--ghost" type="button" data-copy="#case-summary" data-copy-message="Client story summary copied as Markdown">
+              <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy summary
+            </button>
+          </div>
+        </div>
+        <p class="scenario-note">Northline Group is an illustrative client scenario. All names, figures and quotes are fictional and created for layout reference. Replace them with approved client facts before external use.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--white" id="evidence">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <p class="kicker">Engagement at a glance</p>
+          <h2 class="h2 mt-3">90 days, one slice, one owner.</h2>
+          <p class="lede mt-4">The engagement was designed to end with a decision, not a dependency. Every phase had an exit criterion.</p>
+        </div>
+        <div class="timeline" style="grid-template-columns:1fr 1fr">
+          <div class="tl-item tl-item--done"><span class="tl-date">W1–2</span><h4>Protect</h4><p>Book mapped, interfaces frozen, rollback defined.</p></div>
+          <div class="tl-item tl-item--done"><span class="tl-date">W3–6</span><h4>Isolate</h4><p>Intake slice behind an event contract.</p></div>
+          <div class="tl-item tl-item--done"><span class="tl-date">W7–10</span><h4>Prove</h4><p>Live for four weeks with a named owner.</p></div>
+          <div class="tl-item"><span class="tl-date">W11–12</span><h4>Decide</h4><p>Gate, value case and phase 3 recommendation.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- @include _partials/footer.html -->
+<script src="../../../assets/sogeti.js"></script>
+</body>
+</html>

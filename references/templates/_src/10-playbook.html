@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The first 90 days — a hands-on AI field guide — Sogeti</title>
+<meta name="description" content="A practical 90-day playbook for moving an AI pilot into a live service, with checklists, traps and a decision gate.">
+<link rel="stylesheet" href="../../../assets/sogeti.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- @include _partials/shapes.html -->
+<!-- @include _partials/header.html -->
+
+<main id="main">
+  <section class="page-head" id="context">
+    <div class="page-head__shape" aria-hidden="true"></div>
+    <span class="page-head__mark" aria-hidden="true">10</span>
+    <div class="wrap">
+      <p class="kicker">Field guide / AI delivery</p>
+      <h1 class="display display--s">The first 90 days.</h1>
+      <p class="lede">A practical playbook for moving one AI use case from a working demo to a live service. Five chapters, 20 checks, one decision gate. No maturity model.</p>
+      <div class="page-head__meta">
+        <span>20 checks</span>
+        <span>About 15 minutes</span>
+        <span>Print-friendly</span>
+        <span>Version 1.0</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white" id="approach">
+    <div class="wrap playbook-layout">
+      <aside class="playbook-progress no-print" aria-label="Playbook progress">
+        <p class="toc__title">Your progress</p>
+        <p class="progress-label" id="progress-label">0 of 20 complete</p>
+        <div class="progress-track" role="progressbar" aria-labelledby="progress-label" aria-valuemin="0" aria-valuemax="20" aria-valuenow="0"><i id="progress-fill" style="width:0%"></i></div>
+        <ol style="margin-top:1.2rem">
+          <li><a href="#ch0"><span>00</span>Before you start</a></li>
+          <li><a href="#ch1"><span>01</span>Protect the book</a></li>
+          <li><a href="#ch2"><span>02</span>Isolate the slice</a></li>
+          <li><a href="#ch3"><span>03</span>Prove it live</a></li>
+          <li><a href="#ch4"><span>04</span>Decide and scale</a></li>
+        </ol>
+        <button class="btn btn--primary btn--sm" type="button" data-copy="#plan-output" data-copy-message="Plan copied as Markdown">
+          <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy my plan
+        </button>
+        <button class="btn btn--ghost btn--sm" type="button" id="reset-plan">Reset checks</button>
+      </aside>
+
+      <article>
+        <p class="lede">Most AI playbooks describe a capability model. This one describes a week. It assumes you already have a use case, a sponsor and a working demo. The job is to turn that into a service that someone owns.</p>
+
+        <div class="callout callout--purple mt-5">
+          <h4>The one rule</h4>
+          <p>Do not scale until one slice has run live for four weeks with a named owner, a tested rollback and one operating metric that moved. Everything else is preparation.</p>
+        </div>
+
+        <div class="phasebar mt-6" aria-label="90-day map">
+          <div>W1–2<br>Protect</div><div>W3–6<br>Isolate</div><div>W7–10<br>Prove</div><div>W11–12<br>Decide</div>
+        </div>
+
+        <section class="chapter" id="ch0">
+          <div class="chapter__head"><span class="chapter__num">00</span><h2>Before you start</h2></div>
+          <p>Four checks that prevent a predictable failure. If any is missing, fix it before writing code.</p>
+          <div class="check-item"><input type="checkbox" id="c01" data-check><label for="c01"><b>Name the business owner.</b> The person whose target moves if the model is wrong. Not the sponsor.</label></div>
+          <div class="check-item"><input type="checkbox" id="c02" data-check><label for="c02"><b>Write the stop rule.</b> The evidence that would make you stop, in advance. A stop rule is a sign of seriousness.</label></div>
+          <div class="check-item"><input type="checkbox" id="c03" data-check><label for="c03"><b>Baseline one operating number.</b> Cycle time, exception rate, cost per decision. One is enough.</label></div>
+          <div class="check-item"><input type="checkbox" id="c04" data-check><label for="c04"><b>Book the rollback rehearsal.</b> Put it in the calendar before the build starts. Invite risk.</label></div>
+          <div class="field-note"><b>Field note</b><p>The most common failure is a sponsor who cannot say no. If your owner has no authority to stop the service, you have a stakeholder, not an owner.</p></div>
+        </section>
+
+        <section class="chapter" id="ch1">
+          <div class="chapter__head"><span class="chapter__num">01</span><h2>Protect the book</h2></div>
+          <p>The current service cannot pause for your experiment. Map what must not move before you change anything.</p>
+          <div class="check-item"><input type="checkbox" id="c05" data-check><label for="c05"><b>Map the system of record.</b> Where does the authoritative answer live today? It stays there until the slice earns its place.</label></div>
+          <div class="check-item"><input type="checkbox" id="c06" data-check><label for="c06"><b>Freeze the interfaces.</b> List the contracts that cannot change during the proof. Put them under change control.</label></div>
+          <div class="check-item"><input type="checkbox" id="c07" data-check><label for="c07"><b>Define the rollback.</b> Who triggers it, how long it takes, what the customer sees. Write it in one page.</label></div>
+          <div class="check-item"><input type="checkbox" id="c08" data-check><label for="c08"><b>Agree the dual-run window.</b> A time box, not “until we are comfortable.” Set the end date now.</label></div>
+          <div class="field-note"><b>Field note</b><p>“No big-bang cutover” is not a strategy on its own. The strategy is a boundary that can be moved one slice at a time.</p></div>
+        </section>
+
+        <section class="chapter" id="ch2">
+          <div class="chapter__head"><span class="chapter__num">02</span><h2>Isolate the slice</h2></div>
+          <p>Choose the smallest slice that touches a real decision and a real exception. Smaller is better than impressive.</p>
+          <div class="check-item"><input type="checkbox" id="c09" data-check><label for="c09"><b>Pick one product line.</b> One line, one channel, one decision. If it needs a steering group to explain, it is too big.</label></div>
+          <div class="check-item"><input type="checkbox" id="c10" data-check><label for="c10"><b>Write the event contract.</b> What fact does the slice publish? Who consumes it? What is the schema version?</label></div>
+          <div class="check-item"><input type="checkbox" id="c11" data-check><label for="c11"><b>Separate the data store.</b> No shared database. If you cannot separate it, you have not isolated the slice.</label></div>
+          <div class="check-item"><input type="checkbox" id="c12" data-check><label for="c12"><b>Name the service owner.</b> Before the first line of code. The owner signs the runbook.</label></div>
+          <div class="field-note"><b>Field note</b><p>If the slice needs three new platforms, it is a programme. Cut it until it needs one contract and one owner.</p></div>
+        </section>
+
+        <section class="chapter" id="ch3">
+          <div class="chapter__head"><span class="chapter__num">03</span><h2>Prove it live</h2></div>
+          <p>Four weeks of real cases beats four months of pre-production testing. Run it with the people who will own it.</p>
+          <div class="check-item"><input type="checkbox" id="c13" data-check><label for="c13"><b>Go live with a fallback.</b> The old path stays available until the new one has earned its place.</label></div>
+          <div class="check-item"><input type="checkbox" id="c14" data-check><label for="c14"><b>Instrument the exception queue.</b> Queue age, volume, reason. The exception is the product.</label></div>
+          <div class="check-item"><input type="checkbox" id="c15" data-check><label for="c15"><b>Review the operating number weekly.</b> Same number, same owner, same room. No new dashboard.</label></div>
+          <div class="check-item"><input type="checkbox" id="c16" data-check><label for="c16"><b>Test the rollback twice.</b> Once in rehearsal, once with live-like traffic. Record the time to recover.</label></div>
+          <div class="field-note"><b>Field note</b><p>If the operations team cannot run the service without the build team in the room, you have a demo with a support contract.</p></div>
+        </section>
+
+        <section class="chapter" id="ch4">
+          <div class="chapter__head"><span class="chapter__num">04</span><h2>Decide and scale</h2></div>
+          <p>The decision gate is the point of the 90 days. Make it explicit, documented and reversible.</p>
+          <div class="check-item"><input type="checkbox" id="c17" data-check><label for="c17"><b>Hold the gate.</b> A go/no-go with the business owner, the service owner and risk in the room. Not a status update.</label></div>
+          <div class="check-item"><input type="checkbox" id="c18" data-check><label for="c18"><b>Retire the old path.</b> If you go, remove the dual run on the agreed date. If you do not, stop the spend.</label></div>
+          <div class="check-item"><input type="checkbox" id="c19" data-check><label for="c19"><b>Write the phase 3 case.</b> The next slice, the next number and the next owner. Scale by service, not by ambition.</label></div>
+          <div class="check-item"><input type="checkbox" id="c20" data-check><label for="c20"><b>Publish what you learned.</b> One page, including what did not work. The next team should not pay for the same lesson.</label></div>
+          <div class="field-note"><b>Field note</b><p>A successful gate can still end in “stop.” The value of a 90-day proof is that it makes stopping cheap and evidence-based.</p></div>
+        </section>
+
+        <div class="end-cta">
+          <p class="kicker">Use this with a real case</p>
+          <h3 class="h3 mt-3">Bring the playbook to a working session.</h3>
+          <p class="mt-3 ink-2 measure">We will run the 20 checks against one live use case and leave you with the gaps, the owner and the first three actions.</p>
+          <div class="actions mt-5">
+            <a class="btn btn--primary" href="https://www.sogeti.com/contact-us/" target="_blank" rel="noopener">Book a working session
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <button class="btn btn--ghost" type="button" data-copy="#plan-output" data-copy-message="Plan copied as Markdown">
+              <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy my plan
+            </button>
+            <button class="btn btn--ghost" type="button" data-print>
+              <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Print / PDF
+            </button>
+          </div>
+        </div>
+        <div id="plan-output" class="sr-only" aria-live="polite"></div>
+        <p class="scenario-note">This playbook is a Sogeti point of view for discussion. It is not a substitute for legal, risk or regulatory advice.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<!-- @include _partials/footer.html -->
+<script src="../../../assets/sogeti.js"></script>
+<script>
+(function () {
+  var key = "sogeti-playbook-v1";
+  var boxes = Array.prototype.slice.call(document.querySelectorAll("[data-check]"));
+  var fill = document.getElementById("progress-fill");
+  var label = document.getElementById("progress-label");
+  var bar = document.querySelector('[role="progressbar"]');
+  var out = document.getElementById("plan-output");
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(key) || "{}"); } catch (e) { saved = {}; }
+  boxes.forEach(function (b) { if (saved[b.id]) b.checked = true; });
+
+  function update() {
+    var done = boxes.filter(function (b) { return b.checked; });
+    label.textContent = done.length + " of " + boxes.length + " complete";
+    fill.style.width = (done.length / boxes.length * 100) + "%";
+    if (bar) bar.setAttribute("aria-valuenow", String(done.length));
+    var state = {};
+    boxes.forEach(function (b) { if (b.checked) state[b.id] = true; });
+    try { localStorage.setItem(key, JSON.stringify(state)); } catch (e) {}
+    out.textContent = "# The first 90 days — my plan\n\n" +
+      done.map(function (b) { return "- [x] " + b.nextElementSibling.textContent.trim(); }).join("\n") +
+      (done.length ? "\n\n(" + done.length + " of " + boxes.length + " checks complete)" : "_No checks selected yet._");
+  }
+  boxes.forEach(function (b) { b.addEventListener("change", update); });
+  var reset = document.getElementById("reset-plan");
+  if (reset) reset.addEventListener("click", function () {
+    boxes.forEach(function (b) { b.checked = false; });
+    try { localStorage.removeItem(key); } catch (e) {}
+    update();
+  });
+  update();
+})();
+</script>
+</body>
+</html>

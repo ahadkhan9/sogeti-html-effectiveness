@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The system — Sogeti HTML effectiveness</title>
+<meta name="description" content="The Sogeti HTML design system in one page: palette, type, shape, components, data, motion and the anti-slop rules.">
+<link rel="stylesheet" href="../../../assets/sogeti.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- @include _partials/shapes.html -->
+
+<header class="site-head no-print">
+  <div class="wrap site-head__inner">
+    <a class="brand" href="#main" aria-label="Sogeti reference shelf">
+      <img src="../../../assets/logos/sogeti-logo-color.png" width="164" height="86" alt="Sogeti, part of Capgemini">
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Sections">
+      <a href="#colour">Colour</a>
+      <a href="#type">Type</a>
+      <a href="#shape">Shape</a>
+      <a href="#components">Components</a>
+      <a href="#rules">Rules</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-head">
+    <div class="page-head__shape" aria-hidden="true"></div>
+    <span class="page-head__mark" aria-hidden="true">DS</span>
+    <div class="wrap">
+      <p class="kicker">Reference / Design system v1.0</p>
+      <h1 class="display display--s">The system, on one page.</h1>
+      <p class="lede">A working reference, not a brand book. The authority is the PDF in <span class="mono">reference/</span>; this page shows how the system behaves in HTML.</p>
+      <div class="page-head__meta">
+        <span>Capgemini Blue</span><span>Ubuntu</span><span>One shape</span><span>Sentence case</span><span>Evidence</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white" id="colour">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="kicker">01 / Colour</p><h2 class="h2 mt-3">One blue field. One accent. A lot of grey.</h2></div>
+        <p class="lede">Vibrant Blue is a graphics colour. Red is an accent, not a field. Small red text uses the darker functional red.</p>
+      </div>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch__chip" style="background:#0070AD"></div><div class="swatch__body"><b>Capgemini Blue</b><span>#0070AD · primary field, links</span></div></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#12ABDB"></div><div class="swatch__body"><b>Vibrant Blue</b><span>#12ABDB · data, one highlight</span></div></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#F5F5F7;border-bottom:1px solid #D9E0E6"></div><div class="swatch__body"><b>Cool Grey</b><span>#F5F5F7 · default ground</span></div></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#2B0A3D"></div><div class="swatch__body"><b>Deep Purple</b><span>#2B0A3D · depth, editorial ink</span></div></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#F53B53"></div><div class="swatch__body"><b>Cool Tech Red</b><span>#F53B53 · accent, large text only</span></div></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#DB2443"></div><div class="swatch__body"><b>Red action</b><span>#DB2443 · white text, 4.83:1</span></div></div>
+      </div>
+      <p class="small muted mt-4">Sogeti Red #FF4019 is the logo i-dot only. It is not a UI colour. Full contrast table: references/color-system.md.</p>
+    </div>
+  </section>
+
+  <section class="section section--grey" id="type">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="kicker">02 / Type</p><h2 class="h2 mt-3">Mono for the claim. Ubuntu for the reading.</h2></div>
+        <p class="lede">Sentence case. One display statement per page. Body at 17 px, not Light. Verdana is the only fallback.</p>
+      </div>
+      <div class="type-specimen"><span>Display / Mono Bold</span><div class="display" style="font-size:clamp(2.5rem,6vw,4.5rem)">The magic is in the making.</div></div>
+      <div class="type-specimen"><span>H1 / Ubuntu Bold</span><div class="h1" style="font-size:clamp(2rem,4vw,3.2rem)">A specific claim, not a slogan.</div></div>
+      <div class="type-specimen"><span>H2 / Ubuntu Medium</span><div class="h2" style="font-size:clamp(1.6rem,3vw,2.4rem)">The weighting is the argument.</div></div>
+      <div class="type-specimen"><span>Lead / Ubuntu Light</span><div class="lede">Pilots look convincing in the demo room. Value shows up when ownership, data and decisions move into the line.</div></div>
+      <div class="type-specimen"><span>Body / Ubuntu Regular</span><div class="measure">In a demo, the model meets a curated case and a patient audience. In production, it meets missing fields at 02:00, a customer who does not fit the training set, and a queue of people who need an answer before the next shift.</div></div>
+      <div class="type-specimen"><span>Metadata / Mono</span><div class="mono" style="font-size:.8rem;color:var(--blue)">Northline Group · 14 November 2026 · Confidential</div></div>
+    </div>
+  </section>
+
+  <section class="section section--white" id="shape">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="kicker">03 / Shape</p><h2 class="h2 mt-3">A field with a scooped corner, not a rounded card.</h2></div>
+        <p class="lede">One primary shape per page. Flip it, pin it, keep 5% margins, never rotate it 90°.</p>
+      </div>
+      <div class="grid grid--3">
+        <div><div class="shape-demo shape-primary"></div><p class="shape-label">Primary · bottom-right scoop</p></div>
+        <div><div class="shape-demo shape-demo--left shape-left"></div><p class="shape-label">Mirror · bottom-left scoop</p></div>
+        <div><div class="shape-demo shape-demo--wedge shape-wedge"></div><p class="shape-label">Wedge · secondary</p></div>
+      </div>
+      <div class="callout callout--purple mt-6">
+        <h4>The shape is architecture</h4>
+        <p>Use it as a field for typography, illustration or a 2-colour logo. Do not shrink it to a decorative corner, tile it, or center it behind a centered hero.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--grey" id="components">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="kicker">04 / Components</p><h2 class="h2 mt-3">The working parts.</h2></div>
+        <p class="lede">Flat surfaces, hairline rules, pill controls, no wide shadows. Every component is in assets/sogeti.css.</p>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn--primary" type="button">Primary action <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        <button class="btn btn--ghost" type="button">Secondary action</button>
+        <button class="btn btn--dark" type="button">Dark action</button>
+        <button class="btn btn--red" type="button">Red action</button>
+      </div>
+
+      <div class="pill-row mt-5">
+        <span class="tag">Tag</span><span class="tag tag--outline">Outline</span><span class="tag tag--ok">Accepted</span><span class="tag tag--warn">Pending</span><span class="tag tag--red">High risk</span>
+        <span class="status status--ok">Green</span><span class="status status--warn">Watch</span><span class="status status--risk">High</span>
+      </div>
+
+      <div class="grid grid--2 mt-6">
+        <div class="stat"><div class="stat__value">82%</div><p class="stat__label">Phase scope complete</p><p class="stat__note">Plan at week 8: 100%</p></div>
+        <div class="stat stat--vibrant"><div class="stat__value">4.1%</div><p class="stat__label">Exception rate</p><p class="stat__note">Threshold: 5.0%</p></div>
+      </div>
+
+      <div class="table-wrap mt-6">
+        <table class="table table--compact table--fit">
+          <caption>Table caption with the source and period.</caption>
+          <thead><tr><th scope="col">Handover</th><th scope="col">Question</th><th scope="col">Evidence</th></tr></thead>
+          <tbody>
+            <tr><td class="strong">Ownership</td><td>Who is accountable?</td><td>A name in the service catalog, with budget</td></tr>
+            <tr><td class="strong">Data</td><td>Which input can stop it?</td><td>A monitored contract with a fallback</td></tr>
+            <tr><td class="strong">Risk</td><td>Who can switch it off?</td><td>A tested rollback and an incident path</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid grid--2 mt-6">
+        <div class="callout callout--purple"><h4>Callout</h4><p>One clear point. Not every paragraph needs a box.</p></div>
+        <blockquote class="quote"><blockquote>The model did not change the queue. The owner did.</blockquote><figcaption><b>Operations director</b>Illustrative composite quote.</figcaption></blockquote>
+      </div>
+
+      <div class="timeline mt-7">
+        <div class="tl-item tl-item--done"><span class="tl-date">W1–2</span><h4>Protect</h4><p>Book mapped, rollback defined.</p></div>
+        <div class="tl-item"><span class="tl-date">W3–6</span><h4>Isolate</h4><p>One slice behind a contract.</p></div>
+        <div class="tl-item tl-item--risk"><span class="tl-date">W7–10</span><h4>Prove</h4><p>Live for four weeks.</p></div>
+        <div class="tl-item"><span class="tl-date">W11–12</span><h4>Decide</h4><p>Go/no-go on evidence.</p></div>
+      </div>
+
+      <div class="bars mt-7" style="max-width:720px">
+        <div class="bar-row"><span>Ownership</span><div class="bar-track"><i class="bar-fill" style="width:41%"></i></div><span class="bar-value">41%</span></div>
+        <div class="bar-row"><span>Data contracts</span><div class="bar-track"><i class="bar-fill bar-fill--vib" style="width:37%"></i></div><span class="bar-value">37%</span></div>
+        <div class="bar-row"><span>Risk and rollback</span><div class="bar-track"><i class="bar-fill" style="width:34%"></i></div><span class="bar-value">34%</span></div>
+      </div>
+      <div class="legend"><span><i></i>Primary</span><span class="l-vib"><i></i>Vibrant</span></div>
+
+      <div class="icon-grid mt-7">
+        <div class="icon-cell"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>arrow</div>
+        <div class="icon-cell"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>arrow-up</div>
+        <div class="icon-cell"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>check</div>
+        <div class="icon-cell"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>copy</div>
+        <div class="icon-cell"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>download</div>
+        <div class="icon-cell"><svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg>chevron</div>
+        <div class="icon-cell"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>clock</div>
+        <div class="icon-cell"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>shield</div>
+        <div class="icon-cell"><svg class="icon" aria-hidden="true"><use href="#i-cloud"/></svg>cloud</div>
+        <div class="icon-cell"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>users</div>
+        <div class="icon-cell"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg>target</div>
+        <div class="icon-cell"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>info</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white" id="rules">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="kicker">05 / Rules</p><h2 class="h2 mt-3">What makes it Sogeti, and what makes it slop.</h2></div>
+        <p class="lede">The gate is subtraction. Every pattern below is legitimate with a job; the defect is the missing job.</p>
+      </div>
+      <div class="dodont">
+        <div>
+          <h4 style="color:var(--blue)">Sogeti</h4>
+          <ul>
+            <li>One Capgemini Blue field per page; grey and white elsewhere.</li>
+            <li>One mono display claim, sentence case.</li>
+            <li>One primary shape, pinned, with 5% margins.</li>
+            <li>Flat surfaces, hairline rules, no wide shadows.</li>
+            <li>A real number with a source and a date.</li>
+            <li>One oversized moment, then quiet.</li>
+            <li>Motion with a job, removed under reduced motion.</li>
+            <li>Export at the end of an interactive artifact.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:var(--risk)">Slop</h4>
+          <ul>
+            <li>Blue hero, blue section, blue cards, blue footer.</li>
+            <li>Gradient hero text and a purple glow.</li>
+            <li>Isometric decoration with no referent.</li>
+            <li>Rounded-square icon tiles above every heading.</li>
+            <li>Three equal feature cards because the page felt empty.</li>
+            <li>A buzzword layer with no mechanism behind it.</li>
+            <li>Fade-up on every section; hover-scale on everything.</li>
+            <li>A fake dashboard with invented metrics.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout callout--warn mt-6">
+        <h4>The 2026 overcorrection</h4>
+        <p>Cream, amber and an oversized italic serif is now as reflexive as purple was. Sogeti is a blue, mono, precise brand. Do not sand it into a lifestyle magazine to prove you are not generic.</p>
+      </div>
+      <p class="scenario-note">This page is part of the skill’s reference set. The client scenario used in the templates is illustrative. The brand PDF is the authority.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot no-print" style="padding-block:2.5rem">
+  <div class="wrap site-foot__base" style="margin-top:0;border-top:0;padding-top:0">
+    <span>© <span data-year>2026</span> Sogeti. Part of the Capgemini Group.</span>
+    <span>Design system reference · v1.0</span>
+  </div>
+</footer>
+
+<script src="../../../assets/sogeti.js"></script>
+</body>
+</html>

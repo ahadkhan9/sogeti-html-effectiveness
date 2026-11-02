@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northline discovery — workshop synthesis</title>
+<meta name="description" content="What we heard, what it means and what we decided after the Northline claims discovery workshop.">
+<link rel="stylesheet" href="../../../assets/sogeti.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- @include _partials/shapes.html -->
+<!-- @include _partials/header.html -->
+
+<main id="main">
+  <section class="page-head" id="context">
+    <div class="page-head__shape" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="kicker">Workshop synthesis / Northline discovery</p>
+      <h1 class="display display--s">What we heard, what it means, what we decided.</h1>
+      <p class="lede">Six themes from two days with claims operations, platform, risk and finance. Each one has a quote, an interpretation and a decision. The interpretation is ours; the decision is yours.</p>
+      <div class="page-head__meta">
+        <span>Workshop 1 of 2</span>
+        <time datetime="2026-11-05">5–6 November 2026</time>
+        <span>Amsterdam</span>
+        <span>18 participants</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight section--white">
+    <div class="wrap">
+      <div class="brief-grid">
+        <div><b>Purpose</b><p>Agree the first slice, the operating constraints and what “done” means for the 90-day discovery.</p></div>
+        <div><b>Method</b><p>Six structured conversations, one journey map, one decision wall. No slides after lunch.</p></div>
+        <div><b>Output</b><p>Six themes, four decisions, five actions and one unresolved tension for the next session.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--grey" id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">01 / Synthesis board</p>
+          <h2 class="h2 mt-3">Six themes. Select the ones that belong in the readout.</h2>
+        </div>
+        <p class="lede">The board is a working artifact, not a transcript. Select a theme to include it in the exported synthesis.</p>
+      </div>
+
+      <div class="synthesis-bar no-print">
+        <div class="filters" aria-label="Filter themes">
+          <button type="button" data-filter="all" aria-pressed="true">All 6</button>
+          <button type="button" data-filter="operations" aria-pressed="false">Operations</button>
+          <button type="button" data-filter="platform" aria-pressed="false">Platform</button>
+          <button type="button" data-filter="governance" aria-pressed="false">Governance</button>
+        </div>
+        <div class="cluster">
+          <span class="small muted" id="selected-count" aria-live="polite">6 of 6 selected</span>
+          <button class="btn btn--primary btn--sm" type="button" id="copy-synthesis">
+            <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy synthesis
+          </button>
+        </div>
+      </div>
+
+      <div class="synthesis" id="synthesis">
+        <article class="theme is-selected" data-stream="operations">
+          <input class="theme__check" type="checkbox" checked aria-label="Include theme 1 in synthesis">
+          <div>
+            <div class="theme__title"><span class="theme__num">01</span><h3>The queue is the product</h3></div>
+            <p class="theme__quote">“We don’t lose claims. We lose the day.”</p>
+          </div>
+          <div class="theme__meaning"><b>What it means</b><p>The exception queue is the real service. Automation that ignores it moves work around rather than out. The operating metric is queue age, not model accuracy.</p></div>
+          <div class="theme__decision"><b>Decision</b><p>Instrument the exception queue first. Fund two analysts for the proof period.</p></div>
+        </article>
+
+        <article class="theme is-selected" data-stream="platform">
+          <input class="theme__check" type="checkbox" checked aria-label="Include theme 2 in synthesis">
+          <div>
+            <div class="theme__title"><span class="theme__num">02</span><h3>Batch is a business rhythm</h3></div>
+            <p class="theme__quote">“Finance closes when the file lands.”</p>
+          </div>
+          <div class="theme__meaning"><b>What it means</b><p>Event-driven does not mean real-time everywhere. Payment and correspondence windows are commitments to finance and customers. Preserve them while decoupling the services behind them.</p></div>
+          <div class="theme__decision"><b>Decision</b><p>Keep the existing finance window in phase 2. Move the scheduler behind an interface.</p></div>
+        </article>
+
+        <article class="theme is-selected" data-stream="governance">
+          <input class="theme__check" type="checkbox" checked aria-label="Include theme 3 in synthesis">
+          <div>
+            <div class="theme__title"><span class="theme__num">03</span><h3>Nobody owns the handoff</h3></div>
+            <p class="theme__quote">“Everyone thinks someone else checks it.”</p>
+          </div>
+          <div class="theme__meaning"><b>What it means</b><p>The handoffs between intake, assessment and payments are where errors concentrate. A RACI for the current flow does not exist, so the exception path is informal.</p></div>
+          <div class="theme__decision"><b>Decision</b><p>Name a service owner for intake before the first slice goes live. Publish the exception RACI.</p></div>
+        </article>
+
+        <article class="theme is-selected" data-stream="operations">
+          <input class="theme__check" type="checkbox" checked aria-label="Include theme 4 in synthesis">
+          <div>
+            <div class="theme__title"><span class="theme__num">04</span><h3>The workaround is the requirement</h3></div>
+            <p class="theme__quote">“The spreadsheet is our real workflow.”</p>
+          </div>
+          <div class="theme__meaning"><b>What it means</b><p>Shadow processes encode rules the system never captured. They are evidence, not resistance. Study them before automating anything.</p></div>
+          <div class="theme__decision"><b>Decision</b><p>Add a shadow-process walkthrough to discovery. Log every spreadsheet rule as a candidate requirement.</p></div>
+        </article>
+
+        <article class="theme is-selected" data-stream="governance">
+          <input class="theme__check" type="checkbox" checked aria-label="Include theme 5 in synthesis">
+          <div>
+            <div class="theme__title"><span class="theme__num">05</span><h3>Risk wants a switch</h3></div>
+            <p class="theme__quote">“Show me how you turn it off.”</p>
+          </div>
+          <div class="theme__meaning"><b>What it means</b><p>Risk will support the slice if the rollback is real and tested. A written fallback is not enough; they want to see it work with live traffic.</p></div>
+          <div class="theme__decision"><b>Decision</b><p>Test the rollback twice before go-live. Invite risk to the second rehearsal.</p></div>
+        </article>
+
+        <article class="theme is-selected" data-stream="operations">
+          <input class="theme__check" type="checkbox" checked aria-label="Include theme 6 in synthesis">
+          <div>
+            <div class="theme__title"><span class="theme__num">06</span><h3>Training is not a change plan</h3></div>
+            <p class="theme__quote">“We learned it in a webinar.”</p>
+          </div>
+          <div class="theme__meaning"><b>What it means</b><p>Capability is built in the flow of work, not in a session. The team needs coaching at the queue, not another module in the LMS.</p></div>
+          <div class="theme__decision"><b>Decision</b><p>Embed a coach in the first four weeks of live operation. Measure time-to-confidence, not attendance.</p></div>
+        </article>
+      </div>
+
+      <div class="callout callout--warn mt-6">
+        <h4>What we did not resolve</h4>
+        <p>Who owns the customer communication when an exception crosses the intake and payments boundary. The group agreed to bring a proposal to workshop 2 rather than decide in the room.</p>
+      </div>
+      <div id="synthesis-output" class="sr-only" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="section section--white" id="evidence">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">02 / Decision register</p>
+          <h2 class="h2 mt-3">Four decisions survived the room.</h2>
+        </div>
+        <p class="lede">A decision is only real when it has an owner and a date. These four do.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="table">
+          <caption>Decision register from workshop 1. Status as of 6 November 2026.</caption>
+          <thead><tr><th scope="col">Decision</th><th scope="col">Owner</th><th scope="col">Date</th><th scope="col">Status</th></tr></thead>
+          <tbody>
+            <tr><td class="strong">First slice is intake, not payments</td><td>Chief Claims Officer</td><td>6 Nov 2026</td><td><span class="tag tag--ok">Agreed</span></td></tr>
+            <tr><td class="strong">Fund two operations analysts for the proof</td><td>Head of Claims Ops</td><td>6 Nov 2026</td><td><span class="tag tag--warn">Pending budget</span></td></tr>
+            <tr><td class="strong">Name an intake service owner before go-live</td><td>COO</td><td>6 Nov 2026</td><td><span class="tag tag--ok">Agreed</span></td></tr>
+            <tr><td class="strong">Test rollback twice with risk present</td><td>Solution lead</td><td>6 Nov 2026</td><td><span class="tag tag--ok">Agreed</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid grid--2 mt-7">
+        <div>
+          <h3 class="h3">Actions before workshop 2</h3>
+          <ul class="checklist mt-4">
+            <li>Publish the exception RACI and walk it with operations.</li>
+            <li>Log every spreadsheet rule from the intake walkthrough.</li>
+            <li>Schedule rollback rehearsal 1 with risk invited.</li>
+            <li>Draft the service owner role and escalation path.</li>
+            <li>Bring a proposal for cross-boundary customer communication.</li>
+          </ul>
+        </div>
+        <div class="callout callout--purple">
+          <h4>Workshop 2</h4>
+          <p>Thursday 26 November 2026, 09:00–13:00 CET. Northline Group, Amsterdam.</p>
+          <p class="mt-3"><strong>Purpose:</strong> resolve the communication ownership question, agree the live-proof metrics and review the draft runbook.</p>
+          <p class="mt-3"><strong>Pre-read:</strong> this synthesis, the exception RACI and the rollback test plan.</p>
+        </div>
+      </div>
+      <p class="scenario-note">Northline Group is an illustrative client scenario for this reference. Quotes are composites created for layout purposes; replace them with attributed, approved workshop notes before circulation.</p>
+    </div>
+  </section>
+</main>
+
+<!-- @include _partials/footer.html -->
+<script src="../../../assets/sogeti.js"></script>
+<script>
+(function () {
+  var themes = Array.prototype.slice.call(document.querySelectorAll(".theme"));
+  var checks = themes.map(function (t) { return t.querySelector(".theme__check"); });
+  var count = document.getElementById("selected-count");
+  var out = document.getElementById("synthesis-output");
+  var filterButtons = Array.prototype.slice.call(document.querySelectorAll("[data-filter]"));
+
+  function selected() { return themes.filter(function (t, i) { return checks[i].checked; }); }
+  function update() {
+    themes.forEach(function (t, i) { t.classList.toggle("is-selected", checks[i].checked); });
+    count.textContent = selected().length + " of " + themes.length + " selected";
+    out.textContent = selected().map(function (t) {
+      var title = t.querySelector("h3").textContent;
+      var quote = t.querySelector(".theme__quote").textContent;
+      var decision = t.querySelector(".theme__decision p").textContent;
+      return "## " + title + "\n" + quote + "\n\n**Decision:** " + decision;
+    }).join("\n\n");
+  }
+  checks.forEach(function (c) { c.addEventListener("change", update); });
+  filterButtons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var f = b.getAttribute("data-filter");
+      filterButtons.forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      themes.forEach(function (t) { t.hidden = f !== "all" && t.getAttribute("data-stream") !== f; });
+    });
+  });
+  var btn = document.getElementById("copy-synthesis");
+  if (btn) btn.addEventListener("click", function () {
+    update();
+    var header = "# Northline discovery — workshop synthesis\n\n";
+    Sogeti.copy(header + out.textContent, "Synthesis copied as Markdown");
+  });
+  update();
+})();
+</script>
+</body>
+</html>
